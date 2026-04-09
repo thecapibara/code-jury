@@ -1,0 +1,6 @@
+# Сесії голосувань (не комітяться)
+skills/vote/sessions/
+skills/vote/branches/
+
+# Чутлива інформація
+*.json

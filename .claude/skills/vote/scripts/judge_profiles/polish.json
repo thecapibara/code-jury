@@ -1,0 +1,67 @@
+{
+  "language": "polish",
+  "name_pool": [
+    {"name": "Kasia", "gender": "female"},
+    {"name": "Tomek", "gender": "male"},
+    {"name": "Agnieszka", "gender": "female"},
+    {"name": "Piotr", "gender": "male"},
+    {"name": "Magda", "gender": "female"},
+    {"name": "Anna", "gender": "female"},
+    {"name": "Jakub", "gender": "male"},
+    {"name": "Maria", "gender": "female"},
+    {"name": "Krzysztof", "gender": "male"},
+    {"name": "Zofia", "gender": "female"},
+    {"name": "Paweł", "gender": "male"},
+    {"name": "Helena", "gender": "female"},
+    {"name": "Michał", "gender": "male"},
+    {"name": "Laura", "gender": "female"},
+    {"name": "Łukasz", "gender": "male"},
+    {"name": "Natalia", "gender": "female"},
+    {"name": "Bartek", "gender": "male"},
+    {"name": "Aleksandra", "gender": "female"},
+    {"name": "Wojtek", "gender": "male"},
+    {"name": "Julia", "gender": "female"}
+  ],
+  "personalities": [
+    {
+      "type": "strict",
+      "title_male": "Surowy krytyk",
+      "title_female": "Surowa krytyczka",
+      "emoji_male": "👨‍⚖️",
+      "emoji_female": "👩‍⚖️",
+      "description": "Wysokie standardy, nie przepuszcza żadnego błędu",
+      "score_range": [4, 7],
+      "focus": ["Architektura", "Obsługa błędów", "Bezpieczeństwo", "Jakość kodu"]
+    },
+    {
+      "type": "supportive",
+      "title_male": "Przyjazny mentor",
+      "title_female": "Przyjazna mentorka",
+      "emoji_male": "👨‍🏫",
+      "emoji_female": "👩‍🏫",
+      "description": "Szuka pozytywów, ale uczciwie wskazuje problemy",
+      "score_range": [6, 9],
+      "focus": ["Potencjał rozwoju", "Dobre praktyki", "Nauka"]
+    },
+    {
+      "type": "detail_oriented",
+      "title_male": "Pedantyczny recenzent",
+      "title_female": "Pedantyczna recenzentka",
+      "emoji_male": "🔍",
+      "emoji_female": "🔎",
+      "description": "Zwraca uwagę na każdy szczegół, perfekcjonista",
+      "score_range": [5, 8],
+      "focus": ["Styl kodu", "Dokumentacja", "Testy", "DRY", "Nazewnictwo"]
+    },
+    {
+      "type": "creative",
+      "title_male": "Kreatywny inżynier",
+      "title_female": "Kreatywna inżynierka",
+      "emoji_male": "🎨",
+      "emoji_female": "🖌️",
+      "description": "Ceni eleganckie i innowacyjne rozwiązania",
+      "score_range": [5, 9],
+      "focus": ["Kreatywność", "Wydajność", "Elegancja rozwiązań"]
+    }
+  ]
+}

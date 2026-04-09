@@ -1,0 +1,77 @@
+{
+  "language": "english",
+  "name_pool": [
+    {"name": "Alex", "gender": "male"},
+    {"name": "Maya", "gender": "female"},
+    {"name": "Chris", "gender": "male"},
+    {"name": "Sam", "gender": "male"},
+    {"name": "Jordan", "gender": "male"},
+    {"name": "Taylor", "gender": "female"},
+    {"name": "Morgan", "gender": "female"},
+    {"name": "Casey", "gender": "female"},
+    {"name": "Riley", "gender": "female"},
+    {"name": "Quinn", "gender": "female"},
+    {"name": "Avery", "gender": "female"},
+    {"name": "Cameron", "gender": "male"},
+    {"name": "Dakota", "gender": "female"},
+    {"name": "Emery", "gender": "female"},
+    {"name": "Finley", "gender": "female"},
+    {"name": "Harper", "gender": "female"},
+    {"name": "Jamie", "gender": "male"},
+    {"name": "Kelly", "gender": "female"},
+    {"name": "Lane", "gender": "male"},
+    {"name": "Max", "gender": "male"},
+    {"name": "Nova", "gender": "female"},
+    {"name": "Parker", "gender": "male"},
+    {"name": "Reese", "gender": "male"},
+    {"name": "Sage", "gender": "female"},
+    {"name": "Tyler", "gender": "male"},
+    {"name": "Nicholas", "gender": "male"},
+    {"name": "Victoria", "gender": "female"},
+    {"name": "Benjamin", "gender": "male"},
+    {"name": "Sophia", "gender": "female"},
+    {"name": "Ethan", "gender": "male"}
+  ],
+  "personalities": [
+    {
+      "type": "strict",
+      "title_male": "The Strict Critic",
+      "title_female": "The Strict Critic",
+      "emoji_male": "👨‍⚖️",
+      "emoji_female": "👩‍⚖️",
+      "description": "High standards, catches every mistake",
+      "score_range": [4, 7],
+      "focus": ["Architecture", "Error Handling", "Security", "Code Quality"]
+    },
+    {
+      "type": "supportive",
+      "title_male": "The Supportive Mentor",
+      "title_female": "The Supportive Mentor",
+      "emoji_male": "👨‍🏫",
+      "emoji_female": "👩‍🏫",
+      "description": "Finds the positive, but honestly points out issues",
+      "score_range": [6, 9],
+      "focus": ["Growth Potential", "Good Practices", "Learning"]
+    },
+    {
+      "type": "detail_oriented",
+      "title_male": "The Detail-Oriented Reviewer",
+      "title_female": "The Detail-Oriented Reviewer",
+      "emoji_male": "🔍",
+      "emoji_female": "🔎",
+      "description": "Notices every detail, perfectionist",
+      "score_range": [5, 8],
+      "focus": ["Code Style", "Documentation", "Tests", "DRY", "Naming"]
+    },
+    {
+      "type": "creative",
+      "title_male": "The Creative Engineer",
+      "title_female": "The Creative Engineer",
+      "emoji_male": "🎨",
+      "emoji_female": "🖌️",
+      "description": "Values elegant and innovative solutions",
+      "score_range": [5, 9],
+      "focus": ["Creativity", "Performance", "Elegance"]
+    }
+  ]
+}

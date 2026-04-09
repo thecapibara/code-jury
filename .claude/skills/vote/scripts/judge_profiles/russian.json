@@ -1,0 +1,72 @@
+{
+  "language": "russian",
+  "name_pool": [
+    {"name": "Алексей", "gender": "male"},
+    {"name": "Елена", "gender": "female"},
+    {"name": "Дмитрий", "gender": "male"},
+    {"name": "Наташа", "gender": "female"},
+    {"name": "Игорь", "gender": "male"},
+    {"name": "Анна", "gender": "female"},
+    {"name": "Сергей", "gender": "male"},
+    {"name": "Мария", "gender": "female"},
+    {"name": "Андрей", "gender": "male"},
+    {"name": "Ольга", "gender": "female"},
+    {"name": "Владимир", "gender": "male"},
+    {"name": "Татьяна", "gender": "female"},
+    {"name": "Павел", "gender": "male"},
+    {"name": "Ирина", "gender": "female"},
+    {"name": "Николай", "gender": "male"},
+    {"name": "Светлана", "gender": "female"},
+    {"name": "Михаил", "gender": "male"},
+    {"name": "Екатерина", "gender": "female"},
+    {"name": "Артём", "gender": "male"},
+    {"name": "Юлия", "gender": "female"},
+    {"name": "Максим", "gender": "male"},
+    {"name": "Виктория", "gender": "female"},
+    {"name": "Евгений", "gender": "male"},
+    {"name": "Александра", "gender": "female"},
+    {"name": "Денис", "gender": "male"}
+  ],
+  "personalities": [
+    {
+      "type": "strict",
+      "title_male": "Строгий критик",
+      "title_female": "Строгая критикиня",
+      "emoji_male": "👨‍⚖️",
+      "emoji_female": "👩‍⚖️",
+      "description": "Высокие стандарты, не пропускает ни одной ошибки",
+      "score_range": [4, 7],
+      "focus": ["Архитектура", "Обработка ошибок", "Безопасность", "Качество кода"]
+    },
+    {
+      "type": "supportive",
+      "title_male": "Доброжелательный ментор",
+      "title_female": "Доброжелательная менторка",
+      "emoji_male": "👨‍🏫",
+      "emoji_female": "👩‍🏫",
+      "description": "Ищет позитив, но честно указывает на проблемы",
+      "score_range": [6, 9],
+      "focus": ["Потенциал роста", "Хорошие практики", "Обучение"]
+    },
+    {
+      "type": "detail_oriented",
+      "title_male": "Педантичный ревьюер",
+      "title_female": "Педантичная ревьюерка",
+      "emoji_male": "🔍",
+      "emoji_female": "🔎",
+      "description": "Обращает внимание на каждую деталь, перфекционист",
+      "score_range": [5, 8],
+      "focus": ["Стиль кода", "Документация", "Тесты", "DRY", "Именование"]
+    },
+    {
+      "type": "creative",
+      "title_male": "Креативный инженер",
+      "title_female": "Креативная инженерка",
+      "emoji_male": "🎨",
+      "emoji_female": "🖌️",
+      "description": "Ценит элегантные и инновационные решения",
+      "score_range": [5, 9],
+      "focus": ["Креативность", "Производительность", "Элегантность решений"]
+    }
+  ]
+}

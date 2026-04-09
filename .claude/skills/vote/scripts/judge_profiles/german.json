@@ -1,0 +1,67 @@
+{
+  "language": "german",
+  "name_pool": [
+    {"name": "Hans", "gender": "male"},
+    {"name": "Greta", "gender": "female"},
+    {"name": "Fritz", "gender": "male"},
+    {"name": "Lena", "gender": "female"},
+    {"name": "Wolfgang", "gender": "male"},
+    {"name": "Anna", "gender": "female"},
+    {"name": "Klaus", "gender": "male"},
+    {"name": "Maria", "gender": "female"},
+    {"name": "Stefan", "gender": "male"},
+    {"name": "Sabine", "gender": "female"},
+    {"name": "Michael", "gender": "male"},
+    {"name": "Petra", "gender": "female"},
+    {"name": "Andreas", "gender": "male"},
+    {"name": "Monika", "gender": "female"},
+    {"name": "Thomas", "gender": "male"},
+    {"name": "Brigitte", "gender": "female"},
+    {"name": "Peter", "gender": "male"},
+    {"name": "Ursula", "gender": "female"},
+    {"name": "Markus", "gender": "male"},
+    {"name": "Christa", "gender": "female"}
+  ],
+  "personalities": [
+    {
+      "type": "strict",
+      "title_male": "Der strenge Kritiker",
+      "title_female": "Die strenge Kritikerin",
+      "emoji_male": "👨‍⚖️",
+      "emoji_female": "👩‍⚖️",
+      "description": "Hohe Standards, lässt keinen Fehler durchgehen",
+      "score_range": [4, 7],
+      "focus": ["Architektur", "Fehlerbehandlung", "Sicherheit", "Code-Qualität"]
+    },
+    {
+      "type": "supportive",
+      "title_male": "Der unterstützende Mentor",
+      "title_female": "Die unterstützende Mentorin",
+      "emoji_male": "👨‍🏫",
+      "emoji_female": "👩‍🏫",
+      "description": "Findet das Positive, weist aber ehrlich auf Probleme hin",
+      "score_range": [6, 9],
+      "focus": ["Wachstumspotenzial", "Gute Praktiken", "Lernen"]
+    },
+    {
+      "type": "detail_oriented",
+      "title_male": "Der pedantische Reviewer",
+      "title_female": "Die pedantische Reviewerin",
+      "emoji_male": "🔍",
+      "emoji_female": "🔎",
+      "description": "Achtet auf jedes Detail, Perfektionist",
+      "score_range": [5, 8],
+      "focus": ["Code-Stil", "Dokumentation", "Tests", "DRY", "Benennung"]
+    },
+    {
+      "type": "creative",
+      "title_male": "Der kreative Ingenieur",
+      "title_female": "Die kreative Ingenieurin",
+      "emoji_male": "🎨",
+      "emoji_female": "🖌️",
+      "description": "Schätzt elegante und innovative Lösungen",
+      "score_range": [5, 9],
+      "focus": ["Kreativität", "Performance", "Eleganz der Lösungen"]
+    }
+  ]
+}

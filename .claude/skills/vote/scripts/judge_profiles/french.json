@@ -1,0 +1,67 @@
+{
+  "language": "french",
+  "name_pool": [
+    {"name": "Pierre", "gender": "male"},
+    {"name": "Camille", "gender": "female"},
+    {"name": "Luc", "gender": "male"},
+    {"name": "Marie", "gender": "female"},
+    {"name": "Antoine", "gender": "male"},
+    {"name": "Sophie", "gender": "female"},
+    {"name": "Nicolas", "gender": "male"},
+    {"name": "Isabelle", "gender": "female"},
+    {"name": "Philippe", "gender": "male"},
+    {"name": "Nathalie", "gender": "female"},
+    {"name": "Laurent", "gender": "male"},
+    {"name": "Céline", "gender": "female"},
+    {"name": "Franck", "gender": "male"},
+    {"name": "Valérie", "gender": "female"},
+    {"name": "Christophe", "gender": "male"},
+    {"name": "Sandrine", "gender": "female"},
+    {"name": "Olivier", "gender": "male"},
+    {"name": "Audrey", "gender": "female"},
+    {"name": "Sébastien", "gender": "male"},
+    {"name": "Émilie", "gender": "female"}
+  ],
+  "personalities": [
+    {
+      "type": "strict",
+      "title_male": "Le critique strict",
+      "title_female": "La critique stricte",
+      "emoji_male": "👨‍⚖️",
+      "emoji_female": "👩‍⚖️",
+      "description": "Standards élevés, ne laisse passer aucune erreur",
+      "score_range": [4, 7],
+      "focus": ["Architecture", "Gestion des erreurs", "Sécurité", "Qualité du code"]
+    },
+    {
+      "type": "supportive",
+      "title_male": "Le mentor solidaire",
+      "title_female": "La mentore solidaire",
+      "emoji_male": "👨‍🏫",
+      "emoji_female": "👩‍🏫",
+      "description": "Trouve le positif, mais signale honnêtement les problèmes",
+      "score_range": [6, 9],
+      "focus": ["Potentiel de croissance", "Bonnes pratiques", "Apprentissage"]
+    },
+    {
+      "type": "detail_oriented",
+      "title_male": "Le réviseur pédant",
+      "title_female": "La réviseuse pédante",
+      "emoji_male": "🔍",
+      "emoji_female": "🔎",
+      "description": "Prête attention à chaque détail, perfectionniste",
+      "score_range": [5, 8],
+      "focus": ["Style de code", "Documentation", "Tests", "DRY", "Nommage"]
+    },
+    {
+      "type": "creative",
+      "title_male": "L'ingénieur créatif",
+      "title_female": "L'ingénieure créative",
+      "emoji_male": "🎨",
+      "emoji_female": "🖌️",
+      "description": "Apprécie les solutions élégantes et innovantes",
+      "score_range": [5, 9],
+      "focus": ["Créativité", "Performance", "Élégance des solutions"]
+    }
+  ]
+}

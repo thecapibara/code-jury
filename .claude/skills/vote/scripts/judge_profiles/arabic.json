@@ -1,0 +1,67 @@
+{
+  "language": "arabic",
+  "name_pool": [
+    {"name": "عمر", "gender": "male"},
+    {"name": "ليلى", "gender": "female"},
+    {"name": "حسن", "gender": "male"},
+    {"name": "أميرة", "gender": "female"},
+    {"name": "كريم", "gender": "male"},
+    {"name": "فاطمة", "gender": "female"},
+    {"name": "أحمد", "gender": "male"},
+    {"name": "نور", "gender": "female"},
+    {"name": "يوسف", "gender": "male"},
+    {"name": "سارة", "gender": "female"},
+    {"name": "محمد", "gender": "male"},
+    {"name": "مريم", "gender": "female"},
+    {"name": "علي", "gender": "male"},
+    {"name": "زينب", "gender": "female"},
+    {"name": "خالد", "gender": "male"},
+    {"name": "رانيا", "gender": "female"},
+    {"name": "سعيد", "gender": "male"},
+    {"name": "هدى", "gender": "female"},
+    {"name": "طارق", "gender": "male"},
+    {"name": "سلمى", "gender": "female"}
+  ],
+  "personalities": [
+    {
+      "type": "strict",
+      "title_male": "الناقد الصارم",
+      "title_female": "الناقدة الصارمة",
+      "emoji_male": "👨‍⚖️",
+      "emoji_female": "👩‍⚖️",
+      "description": "معايير عالية، لا تفوت أي خطأ",
+      "score_range": [4, 7],
+      "focus": ["البنية", "معالجة الأخطاء", "الأمان", "جودة الكود"]
+    },
+    {
+      "type": "supportive",
+      "title_male": "الموجه الداعم",
+      "title_female": "الموجهة الداعمة",
+      "emoji_male": "👨‍🏫",
+      "emoji_female": "👩‍🏫",
+      "description": "يجد الإيجابيات لكن يشير بصدق إلى المشاكل",
+      "score_range": [6, 9],
+      "focus": ["إمكانية النمو", "الممارسات الجيدة", "التعلم"]
+    },
+    {
+      "type": "detail_oriented",
+      "title_male": "المهتم بالتفاصيل",
+      "title_female": "المهتمة بالتفاصيل",
+      "emoji_male": "🔍",
+      "emoji_female": "🔎",
+      "description": "يلتفت لكل تفصيلة، كمالي",
+      "score_range": [5, 8],
+      "focus": ["أسلوب الكود", "التوثيق", "الاختبارات", "DRY", "التسمية"]
+    },
+    {
+      "type": "creative",
+      "title_male": "المهندس المبدع",
+      "title_female": "المهندسة المبدعة",
+      "emoji_male": "🎨",
+      "emoji_female": "🖌️",
+      "description": "يقدر الحلول الأنيقة والمبتكرة",
+      "score_range": [5, 9],
+      "focus": ["الإبداع", "الأداء", "الأناقة"]
+    }
+  ]
+}

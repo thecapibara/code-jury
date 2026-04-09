@@ -1,0 +1,7 @@
+# Qwen Code - sessions and cache (sensitive info)
+.qwen/skills/vote/sessions/
+.qwen/skills/vote/branches/
+
+# Claude Code - sessions and cache (sensitive info)
+.claude/skills/vote/sessions/
+.claude/skills/vote/branches/
