@@ -20,16 +20,16 @@ Works with Qwen Code, Claude Code, and any other AI coding assistant that suppor
 
 ```bash
 # Install for both Qwen & Claude
-curl -fsSL https://raw.githubusercontent.com/thecapibara/vote-skill/main/install-remote.sh | bash
+curl -fsSL https://raw.githubusercontent.com/thecapibara/vote-skill/main/install.sh | bash -s -- --remote
 
 # Qwen Code only
-curl -fsSL https://raw.githubusercontent.com/thecapibara/vote-skill/main/install-remote.sh | bash -s -- --qwen
+curl -fsSL https://raw.githubusercontent.com/thecapibara/vote-skill/main/install.sh | bash -s -- --remote --qwen
 
 # Claude Code only
-curl -fsSL https://raw.githubusercontent.com/thecapibara/vote-skill/main/install-remote.sh | bash -s -- --claude
+curl -fsSL https://raw.githubusercontent.com/thecapibara/vote-skill/main/install.sh | bash -s -- --remote --claude
 
 # Global installation
-curl -fsSL https://raw.githubusercontent.com/thecapibara/vote-skill/main/install-remote.sh | bash -s -- --all --global
+curl -fsSL https://raw.githubusercontent.com/thecapibara/vote-skill/main/install.sh | bash -s -- --remote --all --global
 ```
 
 ### Clone & Install (Offline)
@@ -49,12 +49,15 @@ bash install.sh --claude
 
 # Global
 bash install.sh --all --global
+
+# Remote (download from GitHub)
+bash install.sh --remote
 ```
 
 ### Verify Installation
 
 ```bash
-cd ~/.qwen/skills/vote  # or .qwen/skills/vote
+cd ~/.qwen/skills/vote  # or your project's .qwen/skills/vote
 python3 scripts/select_judges.py --help
 ```
 
@@ -93,27 +96,27 @@ Use the slash command:
 /vote history             # View history
 ```
 
-Or directly run the script:
+Or directly run the selector script:
 ```bash
-python3 .claude/skills/vote/scripts/vote.py [args]
+python3 .claude/skills/vote/scripts/select_judges.py --help
 ```
 
 ## 👥 The Judges
 
 Each vote uses **4 judges** randomly selected from **10 personality types**:
 
-| Personality | Emoji | Weight | Expertise |
-|-------------|-------|--------|-----------|
-| Strict Critic | 👩‍⚖️ | **1.5x** | Architecture, errors, security |
-| Supportive Mentor | 👨‍🏫 | 1.0x | Potential, best practices, learning |
-| Detail-Oriented Reviewer | 🔍 | 1.2x | Style, docs, tests, DRY |
-| Creative Engineer | 🎨 | 1.0x | Creativity, performance, elegance |
-| **Security Expert** | 🛡️ | **1.8x** | Vulnerabilities, validation, encryption |
-| **Performance Optimizer** | ⚡ | **1.3x** | Algorithms, memory, CPU, scalability |
-| **Testing Expert** | 🧪 | **1.4x** | Unit tests, integration, edge cases |
-| **Architecture Guru** | 🏛️ | **1.6x** | SOLID, patterns, modularity |
-| **User Advocate** | 👤 | **1.1x** | API design, UX, error messages |
-| **Maintenance Focused** | 🔧 | **1.2x** | Readability, tech debt, legacy |
+| Personality | Emoji | Weight | Default Model | Expertise |
+|-------------|-------|--------|---------------|-----------|
+| Strict Critic | 👩‍⚖️ | **1.7x** | Sonnet | Architecture, errors, security |
+| Supportive Mentor | 👨‍🏫 | 1.0x | Haiku | Potential, best practices, learning |
+| Detail-Oriented Reviewer | 🔍 | 1.2x | Haiku | Style, docs, tests, DRY |
+| Creative Engineer | 🎨 | 1.0x | Haiku | Creativity, performance, elegance |
+| **Security Expert** | 🛡️ | **2.0x** | Sonnet | Vulnerabilities, validation, encryption |
+| **Performance Optimizer** | ⚡ | **1.5x** | Sonnet | Algorithms, memory, CPU, scalability |
+| **Testing Expert** | 🧪 | **1.6x** | Sonnet | Unit tests, integration, edge cases |
+| **Architecture Guru** | 🏛️ | **1.8x** | Sonnet | SOLID, patterns, modularity |
+| **User Advocate** | 👤 | **1.1x** | Haiku | API design, UX, error messages |
+| **Maintenance Focused** | 🔧 | **1.2x** | Haiku | Readability, tech debt, legacy |
 
 ### Quality Modes
 
@@ -121,28 +124,11 @@ Each vote uses **4 judges**. Choose the review depth:
 
 | Mode | Use case |
 |------|----------|
-| ⚡ **Lightning** | Quick checks, small changes |
-| ⚖️ **Balanced** | Default, optimal balance |
-| 🔍 **Thorough** | Important reviews, security |
+| ⚡ **Lightning** | Quick checks, small changes (4× Haiku) |
+| ⚖️ **Balanced** | Default, optimal balance (2× Sonnet + 2× Haiku) |
+| 🔍 **Thorough** | Important reviews, security (4× Sonnet) |
 
 Usage: `/vote --mode thorough` or `/vote --mode lightning`
-
-### The Judges
-
-Each vote uses **4 judges** randomly selected from **10 personality types**:
-
-| Personality | Emoji | Weight | Expertise |
-|-------------|-------|--------|-----------|
-| Strict Critic | 👩‍️ | **1.7x** | Architecture, errors, security |
-| Supportive Mentor | 👨‍ | 1.0x | Potential, best practices, learning |
-| Detail-Oriented Reviewer | 🔍 | 1.2x | Style, docs, tests, DRY |
-| Creative Engineer | 🎨 | 1.0x | Creativity, performance, elegance |
-| **Security Expert** | 🛡️ | **2.0x** | Vulnerabilities, validation, encryption |
-| **Performance Optimizer** | ⚡ | **1.5x** | Algorithms, memory, CPU, scalability |
-| **Testing Expert** | 🧪 | **1.6x** | Unit tests, integration, edge cases |
-| **Architecture Guru** | 🏛️ | **1.8x** | SOLID, patterns, modularity |
-| **User Advocate** | 👤 | **1.1x** | API design, UX, error messages |
-| **Maintenance Focused** | 🔧 | **1.2x** | Readability, tech debt, legacy |
 
 ### Weighted Voting Explained
 
@@ -157,7 +143,7 @@ Each vote uses **4 judges** randomly selected from **10 personality types**:
 🎭 Vote Results
 ============================================================
 
-👩‍⚖️ Оксана (Strict Critic) (weight: 1.5x)
+👩‍⚖️ Оксана (Strict Critic) (weight: 1.7x)
   ✅ Good error handling, new functionality added
   ❌ Missing tests
   📊 6.5/10 | ❌ No
@@ -237,30 +223,33 @@ Judges names and personalities adapt to your language:
 ```
 .qwen/skills/vote/           # Qwen Code skill
 ├── SKILL.md                 # Skill description
-├── install.sh               # Installer script
 ├── scripts/
-│   ├── vote.py              # Main entry point
-│   ├── judge_coordinator.py # Judge orchestration
-│   ├── language_detector.py # Language detection
-│   ├── branch_tracker.py    # Branch issue tracking
-│   └── judge_profiles/      # 9 languages
+│   ├── select_judges.py     # Main entry point — judge selection
+│   └── judge_profiles/      # 9 languages (names & personalities)
 ├── sessions/                # Vote cache (gitignored)
 └── branches/                # Branch history (gitignored)
 
 .claude/
 ├── commands/
 │   └── vote.md              # /vote slash command for Claude
+├── agents/
+│   ├── jury-judge-haiku.md  # Lightweight sub-agent
+│   └── jury-judge-sonnet.md # Expert sub-agent
 └── skills/vote/             # Claude Code skill
     └── scripts/             # Same scripts as Qwen Code
+
+judges.json                  # Source of truth for judge weights & models
+install.sh                   # Installer (--remote for download from GitHub)
+select_judges.py             # CLI: judge selection & localization
 ```
 
 ## ⚙️ Configuration
 
-Edit `SKILL.md` to modify behavior. Key settings in `judge_coordinator.py`:
+Key configuration files:
 
-- `JUDGES_COUNT = 4` — number of judges per vote
-- `MAX_DIFF_LINES = 200` — diff optimization threshold
-- `MAX_CONTEXT_LINES = 3` — context around changes
+- `judges.json` — judge weights, models, and focus areas
+- `select_judges.py` — `MODES` dict for quality mode behavior
+- Language profiles in `.claude/skills/vote/scripts/judge_profiles/` — localized names & personalities
 
 ## 🔒 Privacy & Security
 

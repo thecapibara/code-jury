@@ -14,6 +14,9 @@ Usage:
 import json
 import random
 import argparse
+import sys
+import copy
+from collections import deque
 from pathlib import Path
 
 # Resolve path relative to this script's location
@@ -37,8 +40,17 @@ MODES = {
 
 
 def load_judges():
-    with open(JUDGES_FILE, 'r', encoding='utf-8') as f:
-        return json.load(f)
+    """Load judges from JSON file. Exits with clear message on failure."""
+    try:
+        with open(JUDGES_FILE, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except FileNotFoundError:
+        print(f"Error: judges.json not found at {JUDGES_FILE}.", file=sys.stderr)
+        print("Run install.sh first, or ensure you're in the project directory.", file=sys.stderr)
+        sys.exit(1)
+    except json.JSONDecodeError as e:
+        print(f"Error: judges.json is not valid JSON: {e}", file=sys.stderr)
+        sys.exit(1)
 
 
 def load_name_pool(lang='en'):
@@ -50,15 +62,27 @@ def load_name_pool(lang='en'):
     profile_name = profile_map.get(lang, 'english')
     profile_file = PROFILES_DIR / f"{profile_name}.json"
     if profile_file.exists():
-        with open(profile_file, 'r', encoding='utf-8') as f:
-            data = json.load(f)
-        return data.get('name_pool', []), data.get('personalities', [])
+        try:
+            with open(profile_file, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+            return data.get('name_pool', []), data.get('personalities', [])
+        except (json.JSONDecodeError, PermissionError) as e:
+            print(f"Warning: Failed to read {profile_file}: {e}", file=sys.stderr)
+            print(f"Falling back to English names.", file=sys.stderr)
+            return [], []
+    elif lang != 'en':
+        print(f"Warning: Language profile '{profile_name}' not found at {profile_file}.", file=sys.stderr)
+        print(f"Falling back to English names.", file=sys.stderr)
     return [], []
 
 
 def apply_localization(judges, lang='en'):
-    """Apply localized names, titles, and emojis from language pool."""
+    """Apply localized names, titles, and emojis from language pool.
+    
+    Returns a new list — does NOT mutate the input.
+    """
     names, localized_personalities = load_name_pool(lang)
+    
     # Ensure unique names for selected judges
     random.shuffle(names)
     assigned_names = set()
@@ -76,63 +100,67 @@ def apply_localization(judges, lang='en'):
     for p in localized_personalities:
         personality_lookup[p['type']] = p
 
+    result = []
     for i, judge in enumerate(judges):
-        judge_type = judge['type']
+        j = dict(judge)  # shallow copy to avoid mutating original
+        judge_type = j['type']
         localized = personality_lookup.get(judge_type, {})
 
         # Override with localized data if available
         if localized:
-            judge['title_male'] = localized.get('title_male', judge.get('title_male', ''))
-            judge['title_female'] = localized.get('title_female', judge.get('title_female', ''))
-            judge['emoji_male'] = localized.get('emoji_male', judge.get('emoji_male', ''))
-            judge['emoji_female'] = localized.get('emoji_female', judge.get('emoji_female', ''))
-            judge['focus'] = localized.get('focus', judge.get('focus', []))
-            # Localized profiles may have different weights — keep judges.json as source of truth for weights
-            # judge['vote_weight'] = localized.get('vote_weight', judge.get('vote_weight', 1.0))
+            j['title_male'] = localized.get('title_male', j.get('title_male', ''))
+            j['title_female'] = localized.get('title_female', j.get('title_female', ''))
+            j['emoji_male'] = localized.get('emoji_male', j.get('emoji_male', ''))
+            j['emoji_female'] = localized.get('emoji_female', j.get('emoji_female', ''))
+            j['focus'] = localized.get('focus', j.get('focus', []))
 
         # Assign name
         if i < len(names):
             name_entry = names[i]
-            judge['assigned_name'] = name_entry['name']
-            judge['assigned_gender'] = name_entry['gender']
+            j['assigned_name'] = name_entry['name']
+            j['assigned_gender'] = name_entry['gender']
         else:
-            judge['assigned_name'] = judge['name']  # fallback to judge type name
-            judge['assigned_gender'] = 'male'
+            j['assigned_name'] = j['name']  # fallback to judge type name
+            j['assigned_gender'] = 'male'
+        
+        result.append(j)
 
-    return judges
+    return result
 
 
 def apply_mode(judges, mode='balanced'):
-    """Force model based on quality mode, with balanced enforcing 2+2 split."""
+    """Force model based on quality mode, with balanced enforcing 2+2 split.
+    
+    Returns a new list — does NOT mutate the input.
+    """
+    # Deep copy to isolate from original objects
+    result = copy.deepcopy(judges)
     forced_model = MODES.get(mode)
 
     if forced_model:
         # lightning or thorough — override all
-        for judge in judges:
+        for judge in result:
             judge['model'] = forced_model
     elif mode == 'balanced':
-        # Enforce 2 sonnet + 2 haiku split
-        sonnet_idx = [i for i, j in enumerate(judges) if j.get('model') == 'sonnet']
-        haiku_idx = [i for i, j in enumerate(judges) if j.get('model') != 'sonnet']
+        # Enforce 2 sonnet + 2 haiku split using deque for O(1) pops
+        sonnet_idx = deque(i for i, j in enumerate(result) if j.get('model') == 'sonnet')
+        haiku_idx = deque(i for i, j in enumerate(result) if j.get('model') != 'sonnet')
 
         # Need exactly 2 sonnet and 2 haiku from our 4 judges
-        # Convert judges to reach 2+2 split (no duplicates — same judge objects)
-        while len(sonnet_idx) < 2:
-            # Need more sonnet: convert a haiku judge (pick first available)
-            idx = haiku_idx.pop(0)
-            judges[idx]['model'] = 'sonnet'
+        while len(sonnet_idx) < 2 and haiku_idx:
+            idx = haiku_idx.popleft()  # O(1)
+            result[idx]['model'] = 'sonnet'
             sonnet_idx.append(idx)
 
-        while len(haiku_idx) < 2:
-            # Need more haiku: convert a sonnet judge (pick first available)
-            idx = sonnet_idx.pop(0)
-            judges[idx]['model'] = 'haiku'
+        while len(haiku_idx) < 2 and sonnet_idx:
+            idx = sonnet_idx.popleft()  # O(1)
+            result[idx]['model'] = 'haiku'
             haiku_idx.append(idx)
 
         # Reorder: sonnet first, then haiku
-        judges = [judges[i] for i in sonnet_idx[:2] + haiku_idx[:2]]
+        result = [result[i] for i in list(sonnet_idx)[:2] + list(haiku_idx)[:2]]
 
-    return judges
+    return result
 
 
 def select_judges(count=4, lang='en', mode='balanced'):
