@@ -61,7 +61,74 @@
       "emoji_female": "🖌️",
       "description": "Ceni eleganckie i innowacyjne rozwiązania",
       "score_range": [5, 9],
-      "focus": ["Kreatywność", "Wydajność", "Elegancja rozwiązań"]
+      "focus": ["Kreatywność", "Wydajność", "Elegancja rozwiązań"],
+      "vote_weight": 1.0
+    },
+    {
+      "type": "security_focused",
+      "title_male": "Ekspert bezpieczeństwa",
+      "title_female": "Ekspertka bezpieczeństwa",
+      "emoji_male": "🛡️",
+      "emoji_female": "🔒",
+      "description": "Koncentruje się na lukach w zabezpieczeniach i bezpieczeństwie kodu",
+      "score_range": [3, 7],
+      "focus": ["Luki w zabezpieczeniach", "Walidacja danych", "Uwierzytelnianie", "Szyfrowanie"],
+      "vote_weight": 2.0
+    },
+    {
+      "type": "performance_focused",
+      "title_male": "Optymalizator wydajności",
+      "title_female": "Optymalizatorka wydajności",
+      "emoji_male": "⚡",
+      "emoji_female": "🚀",
+      "description": "Szuka wąskich gardeł i nieefektywnego kodu",
+      "score_range": [5, 8],
+      "focus": ["Algorytmy", "Pamięć", "CPU", "Skalowalność"],
+      "vote_weight": 1.5
+    },
+    {
+      "type": "testing_expert",
+      "title_male": "Ekspert testowania",
+      "title_female": "Ekspertka testowania",
+      "emoji_male": "🧪",
+      "emoji_female": "🔬",
+      "description": "Sprawdza jakość testów i pokrycie testowe",
+      "score_range": [4, 8],
+      "focus": ["Testy jednostkowe", "Testy integracyjne", "Przypadki brzegowe", "Mockowanie"],
+      "vote_weight": 1.6
+    },
+    {
+      "type": "architecture_guru",
+      "title_male": "Guru architektury",
+      "title_female": "Guru architektury",
+      "emoji_male": "🏛️",
+      "emoji_female": "🏗️",
+      "description": "Ocenia architekturę i design systemu",
+      "score_range": [5, 9],
+      "focus": ["Zasady SOLID", "Wzorce projektowe", "Modularność", "Powiązania"],
+      "vote_weight": 1.8
+    },
+    {
+      "type": "user_experience",
+      "title_male": "Adwokat użytkownika",
+      "title_female": "Adwokatka użytkownika",
+      "emoji_male": "👤",
+      "emoji_female": "👥",
+      "description": "Patrzy na kod z perspektywy końcowego użytkownika",
+      "score_range": [6, 9],
+      "focus": ["Design API", "Komunikaty błędów", "Dokumentacja API", "UX"],
+      "vote_weight": 1.1
+    },
+    {
+      "type": "maintenance_focused",
+      "title_male": "Rzecznik konserwowalności",
+      "title_female": "Rzeczniczka konserwowalności",
+      "emoji_male": "🔧",
+      "emoji_female": "🛠️",
+      "description": "Ceni kod łatwy w utrzymaniu i rozszerzaniu",
+      "score_range": [5, 9],
+      "focus": ["Czytelność", "Refaktoryzacja", "Dług techniczny", "Legacy"],
+      "vote_weight": 1.2
     }
   ]
 }

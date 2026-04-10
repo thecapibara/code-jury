@@ -110,11 +110,41 @@ Each vote uses **4 judges** randomly selected from **10 personality types**:
 | **User Advocate** | 👤 | **1.1x** | API design, UX, error messages |
 | **Maintenance Focused** | 🔧 | **1.2x** | Readability, tech debt, legacy |
 
+### Quality Modes
+
+Each vote uses **4 judges**. Choose the review depth:
+
+| Mode | Judges | Use case |
+|------|--------|----------|
+| ⚡ **Lightning** | 4× Haiku | Quick checks, small changes |
+| ⚖️ **Balanced** | 2× Sonnet + 2× Haiku | Default, optimal balance |
+| 🔍 **Thorough** | 4× Sonnet | Important reviews, security |
+
+Claude Code: `/vote --mode thorough` or `/vote --mode lightning`
+
+### The Judges
+
+Each vote uses **4 judges** randomly selected from **10 personality types**:
+
+| Personality | Emoji | Weight | Expertise |
+|-------------|-------|--------|-----------|
+| Strict Critic | 👩‍️ | **1.7x** | Architecture, errors, security |
+| Supportive Mentor | 👨‍ | 1.0x | Potential, best practices, learning |
+| Detail-Oriented Reviewer | 🔍 | 1.2x | Style, docs, tests, DRY |
+| Creative Engineer | 🎨 | 1.0x | Creativity, performance, elegance |
+| **Security Expert** | 🛡️ | **2.0x** | Vulnerabilities, validation, encryption |
+| **Performance Optimizer** | ⚡ | **1.5x** | Algorithms, memory, CPU, scalability |
+| **Testing Expert** | 🧪 | **1.6x** | Unit tests, integration, edge cases |
+| **Architecture Guru** | 🏛️ | **1.8x** | SOLID, patterns, modularity |
+| **User Advocate** | 👤 | **1.1x** | API design, UX, error messages |
+| **Maintenance Focused** | 🔧 | **1.2x** | Readability, tech debt, legacy |
+
 ### Weighted Voting Explained
 
 - Judges with higher weight have more influence on the final verdict
+- **Consensus detection**: Issues mentioned by 3+ judges get extra priority
 - To pass: weighted "Yes" votes must exceed 60% of total weight
-- Example: Security Expert (1.8x) saying ❌ hurts more than Mentor (1.0x) saying ❌
+- Example: Security Expert (2.0x) saying ❌ hurts more than Mentor (1.0x) saying ❌
 
 ## 📊 Example Output
 

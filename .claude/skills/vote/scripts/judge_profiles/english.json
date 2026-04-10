@@ -71,7 +71,74 @@
       "emoji_female": "🖌️",
       "description": "Values elegant and innovative solutions",
       "score_range": [5, 9],
-      "focus": ["Creativity", "Performance", "Elegance"]
+      "focus": ["Creativity", "Performance", "Elegance"],
+      "vote_weight": 1.0
+    },
+    {
+      "type": "security_focused",
+      "title_male": "Security Expert",
+      "title_female": "Security Expert",
+      "emoji_male": "🛡️",
+      "emoji_female": "🔒",
+      "description": "Focused on vulnerabilities and code security",
+      "score_range": [3, 7],
+      "focus": ["Vulnerabilities", "Input Validation", "Authentication", "Encryption"],
+      "vote_weight": 2.0
+    },
+    {
+      "type": "performance_focused",
+      "title_male": "Performance Optimizer",
+      "title_female": "Performance Optimizer",
+      "emoji_male": "⚡",
+      "emoji_female": "🚀",
+      "description": "Finds bottlenecks and inefficient code",
+      "score_range": [5, 8],
+      "focus": ["Algorithms", "Memory", "CPU", "Scalability"],
+      "vote_weight": 1.5
+    },
+    {
+      "type": "testing_expert",
+      "title_male": "Testing Expert",
+      "title_female": "Testing Expert",
+      "emoji_male": "🧪",
+      "emoji_female": "🔬",
+      "description": "Checks test quality and coverage",
+      "score_range": [4, 8],
+      "focus": ["Unit Tests", "Integration Tests", "Edge Cases", "Mocking"],
+      "vote_weight": 1.6
+    },
+    {
+      "type": "architecture_guru",
+      "title_male": "Architecture Guru",
+      "title_female": "Architecture Guru",
+      "emoji_male": "🏛️",
+      "emoji_female": "🏗️",
+      "description": "Evaluates system architecture and design",
+      "score_range": [5, 9],
+      "focus": ["SOLID", "Design Patterns", "Modularity", "Coupling"],
+      "vote_weight": 1.8
+    },
+    {
+      "type": "user_experience",
+      "title_male": "User Advocate",
+      "title_female": "User Advocate",
+      "emoji_male": "👤",
+      "emoji_female": "👥",
+      "description": "Looks at code from end-user perspective",
+      "score_range": [6, 9],
+      "focus": ["API Design", "Error Messages", "API Docs", "UX"],
+      "vote_weight": 1.1
+    },
+    {
+      "type": "maintenance_focused",
+      "title_male": "Maintenance Advocate",
+      "title_female": "Maintenance Advocate",
+      "emoji_male": "🔧",
+      "emoji_female": "🛠️",
+      "description": "Values code that is easy to maintain and extend",
+      "score_range": [5, 9],
+      "focus": ["Readability", "Refactoring", "Tech Debt", "Legacy"],
+      "vote_weight": 1.2
     }
   ]
 }

@@ -61,7 +61,74 @@
       "emoji_female": "🖌️",
       "description": "Valora las soluciones elegantes e innovadoras",
       "score_range": [5, 9],
-      "focus": ["Creatividad", "Rendimiento", "Elegancia de soluciones"]
+      "focus": ["Creatividad", "Rendimiento", "Elegancia de soluciones"],
+      "vote_weight": 1.0
+    },
+    {
+      "type": "security_focused",
+      "title_male": "El experto en seguridad",
+      "title_female": "La experta en seguridad",
+      "emoji_male": "🛡️",
+      "emoji_female": "🔒",
+      "description": "Se enfoca en vulnerabilidades y seguridad del código",
+      "score_range": [3, 7],
+      "focus": ["Vulnerabilidades", "Validación de datos", "Autenticación", "Cifrado"],
+      "vote_weight": 2.0
+    },
+    {
+      "type": "performance_focused",
+      "title_male": "El optimizador de rendimiento",
+      "title_female": "La optimizadora de rendimiento",
+      "emoji_male": "⚡",
+      "emoji_female": "🚀",
+      "description": "Busca cuellos de botella y código ineficiente",
+      "score_range": [5, 8],
+      "focus": ["Algoritmos", "Memoria", "CPU", "Escalabilidad"],
+      "vote_weight": 1.5
+    },
+    {
+      "type": "testing_expert",
+      "title_male": "El experto en pruebas",
+      "title_female": "La experta en pruebas",
+      "emoji_male": "🧪",
+      "emoji_female": "🔬",
+      "description": "Revisa la calidad de pruebas y cobertura",
+      "score_range": [4, 8],
+      "focus": ["Pruebas unitarias", "Pruebas de integración", "Casos límite", "Mocking"],
+      "vote_weight": 1.6
+    },
+    {
+      "type": "architecture_guru",
+      "title_male": "El gurú de la arquitectura",
+      "title_female": "La gurú de la arquitectura",
+      "emoji_male": "🏛️",
+      "emoji_female": "🏗️",
+      "description": "Evalúa la arquitectura y el diseño del sistema",
+      "score_range": [5, 9],
+      "focus": ["Principios SOLID", "Patrones de diseño", "Modularidad", "Acoplamiento"],
+      "vote_weight": 1.8
+    },
+    {
+      "type": "user_experience",
+      "title_male": "El defensor del usuario",
+      "title_female": "La defensora del usuario",
+      "emoji_male": "👤",
+      "emoji_female": "👥",
+      "description": "Observa el código desde la perspectiva del usuario final",
+      "score_range": [6, 9],
+      "focus": ["Diseño de API", "Mensajes de error", "Documentación API", "UX"],
+      "vote_weight": 1.1
+    },
+    {
+      "type": "maintenance_focused",
+      "title_male": "El defensor del mantenimiento",
+      "title_female": "La defensora del mantenimiento",
+      "emoji_male": "🔧",
+      "emoji_female": "🛠️",
+      "description": "Valora el código fácil de mantener y extender",
+      "score_range": [5, 9],
+      "focus": ["Legibilidad", "Refactorización", "Deuda técnica", "Legacy"],
+      "vote_weight": 1.2
     }
   ]
 }

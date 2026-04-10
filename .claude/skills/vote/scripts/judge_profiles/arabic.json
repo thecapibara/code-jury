@@ -61,7 +61,74 @@
       "emoji_female": "🖌️",
       "description": "يقدر الحلول الأنيقة والمبتكرة",
       "score_range": [5, 9],
-      "focus": ["الإبداع", "الأداء", "الأناقة"]
+      "focus": ["الإبداع", "الأداء", "الأناقة"],
+      "vote_weight": 1.0
+    },
+    {
+      "type": "security_focused",
+      "title_male": "خبير الأمان",
+      "title_female": "خبيرة الأمان",
+      "emoji_male": "🛡️",
+      "emoji_female": "🔒",
+      "description": "يركز على الثغرات الأمنية وأمان الكود",
+      "score_range": [3, 7],
+      "focus": ["الثغرات", "التحقق من البيانات", "المصادقة", "التشفير"],
+      "vote_weight": 2.0
+    },
+    {
+      "type": "performance_focused",
+      "title_male": "محسن الأداء",
+      "title_female": "محسنة الأداء",
+      "emoji_male": "⚡",
+      "emoji_female": "🚀",
+      "description": "يجد الاختناقات والكود غير الفعال",
+      "score_range": [5, 8],
+      "focus": ["الخوارزميات", "الذاكرة", "المعالج", "القابلية للتوسع"],
+      "vote_weight": 1.5
+    },
+    {
+      "type": "testing_expert",
+      "title_male": "خبير الاختبارات",
+      "title_female": "خبيرة الاختبارات",
+      "emoji_male": "🧪",
+      "emoji_female": "🔬",
+      "description": "يتحقق من جودة الاختبارات والتغطية",
+      "score_range": [4, 8],
+      "focus": ["اختبارات الوحدات", "اختبارات التكامل", "الحالات الحدية", "المحاكاة"],
+      "vote_weight": 1.6
+    },
+    {
+      "type": "architecture_guru",
+      "title_male": "خبير العمارة",
+      "title_female": "خبيرة العمارة",
+      "emoji_male": "🏛️",
+      "emoji_female": "🏗️",
+      "description": "يقيّم عمارة وتصميم النظام",
+      "score_range": [5, 9],
+      "focus": ["مبادئ SOLID", "أنماط التصميم", "النمطية", "الاقتران"],
+      "vote_weight": 1.8
+    },
+    {
+      "type": "user_experience",
+      "title_male": "مدافع المستخدم",
+      "title_female": "مدافعة المستخدم",
+      "emoji_male": "👤",
+      "emoji_female": "👥",
+      "description": "ينظر إلى الكود من منظور المستخدم النهائي",
+      "score_range": [6, 9],
+      "focus": ["تصميم API", "رسائل الخطأ", "توثيق API", "تجربة المستخدم"],
+      "vote_weight": 1.1
+    },
+    {
+      "type": "maintenance_focused",
+      "title_male": "مدافع الصيانة",
+      "title_female": "مدافعة الصيانة",
+      "emoji_male": "🔧",
+      "emoji_female": "🛠️",
+      "description": "يقدر الكود السهل الصيانة والتوسيع",
+      "score_range": [5, 9],
+      "focus": ["القابلية للقراءة", "إعادة الهيكلة", "الدين التقني", "التراث"],
+      "vote_weight": 1.2
     }
   ]
 }

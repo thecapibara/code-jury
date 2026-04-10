@@ -61,7 +61,74 @@
       "emoji_female": "🖌️",
       "description": "Schätzt elegante und innovative Lösungen",
       "score_range": [5, 9],
-      "focus": ["Kreativität", "Performance", "Eleganz der Lösungen"]
+      "focus": ["Kreativität", "Performance", "Eleganz der Lösungen"],
+      "vote_weight": 1.0
+    },
+    {
+      "type": "security_focused",
+      "title_male": "Der Sicherheitsexperte",
+      "title_female": "Die Sicherheitsexpertin",
+      "emoji_male": "🛡️",
+      "emoji_female": "🔒",
+      "description": "Konzentriert sich auf Schwachstellen und Codesicherheit",
+      "score_range": [3, 7],
+      "focus": ["Schwachstellen", "Datenvalidierung", "Authentifizierung", "Verschlüsselung"],
+      "vote_weight": 2.0
+    },
+    {
+      "type": "performance_focused",
+      "title_male": "Der Performance-Optimierer",
+      "title_female": "Die Performance-Optimiererin",
+      "emoji_male": "⚡",
+      "emoji_female": "🚀",
+      "description": "Findet Engpässe und ineffizienten Code",
+      "score_range": [5, 8],
+      "focus": ["Algorithmen", "Speicher", "CPU", "Skalierbarkeit"],
+      "vote_weight": 1.5
+    },
+    {
+      "type": "testing_expert",
+      "title_male": "Der Testexperte",
+      "title_female": "Die Testexpertin",
+      "emoji_male": "🧪",
+      "emoji_female": "🔬",
+      "description": "Prüft Testqualität und Abdeckung",
+      "score_range": [4, 8],
+      "focus": ["Unit-Tests", "Integrationstests", "Grenzfälle", "Mocking"],
+      "vote_weight": 1.6
+    },
+    {
+      "type": "architecture_guru",
+      "title_male": "Der Architektur-Guru",
+      "title_female": "Die Architektur-Guru",
+      "emoji_male": "🏛️",
+      "emoji_female": "🏗️",
+      "description": "Bewertet Systemarchitektur und Design",
+      "score_range": [5, 9],
+      "focus": ["SOLID-Prinzipien", "Design Patterns", "Modularität", "Kopplung"],
+      "vote_weight": 1.8
+    },
+    {
+      "type": "user_experience",
+      "title_male": "Der Nutzeranwalt",
+      "title_female": "Die Nutzeranwältin",
+      "emoji_male": "👤",
+      "emoji_female": "👥",
+      "description": "Betrachtet Code aus Sicht des Endnutzers",
+      "score_range": [6, 9],
+      "focus": ["API-Design", "Fehlermeldungen", "API-Dokumentation", "UX"],
+      "vote_weight": 1.1
+    },
+    {
+      "type": "maintenance_focused",
+      "title_male": "Der Wartbarkeitsanwalt",
+      "title_female": "Die Wartbarkeitsanwältin",
+      "emoji_male": "🔧",
+      "emoji_female": "🛠️",
+      "description": "Schätzt leicht wartbaren und erweiterbaren Code",
+      "score_range": [5, 9],
+      "focus": ["Lesbarkeit", "Refactoring", "Technische Schulden", "Legacy"],
+      "vote_weight": 1.2
     }
   ]
 }

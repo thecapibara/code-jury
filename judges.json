@@ -9,7 +9,7 @@
     "description": "High standards, catches every mistake",
     "score_range": [4, 7],
     "focus": ["Architecture", "Error Handling", "Security", "Code Quality"],
-    "vote_weight": 1.5,
+    "vote_weight": 1.7,
     "model": "sonnet"
   },
   {
@@ -61,7 +61,7 @@
     "description": "Focused on vulnerabilities and code security",
     "score_range": [3, 7],
     "focus": ["Vulnerabilities", "Input Validation", "Authentication", "Encryption"],
-    "vote_weight": 1.8,
+    "vote_weight": 2.0,
     "model": "sonnet"
   },
   {
@@ -74,7 +74,7 @@
     "description": "Finds bottlenecks and inefficient code",
     "score_range": [5, 8],
     "focus": ["Algorithms", "Memory", "CPU", "Scalability"],
-    "vote_weight": 1.3,
+    "vote_weight": 1.5,
     "model": "sonnet"
   },
   {
@@ -87,7 +87,7 @@
     "description": "Checks test quality and coverage",
     "score_range": [4, 8],
     "focus": ["Unit Tests", "Integration Tests", "Edge Cases", "Mocking"],
-    "vote_weight": 1.4,
+    "vote_weight": 1.6,
     "model": "sonnet"
   },
   {
@@ -100,7 +100,7 @@
     "description": "Evaluates system architecture and design",
     "score_range": [5, 9],
     "focus": ["SOLID", "Design Patterns", "Modularity", "Coupling"],
-    "vote_weight": 1.6,
+    "vote_weight": 1.8,
     "model": "sonnet"
   },
   {

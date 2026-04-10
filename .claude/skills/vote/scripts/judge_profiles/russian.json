@@ -66,7 +66,74 @@
       "emoji_female": "🖌️",
       "description": "Ценит элегантные и инновационные решения",
       "score_range": [5, 9],
-      "focus": ["Креативность", "Производительность", "Элегантность решений"]
+      "focus": ["Креативность", "Производительность", "Элегантность решений"],
+      "vote_weight": 1.0
+    },
+    {
+      "type": "security_focused",
+      "title_male": "Эксперт по безопасности",
+      "title_female": "Экспертка по безопасности",
+      "emoji_male": "🛡️",
+      "emoji_female": "🔒",
+      "description": "Фокусируется на уязвимостях и безопасности кода",
+      "score_range": [3, 7],
+      "focus": ["Уязвимости", "Валидация данных", "Аутентификация", "Шифрование"],
+      "vote_weight": 2.0
+    },
+    {
+      "type": "performance_focused",
+      "title_male": "Оптимизатор производительности",
+      "title_female": "Оптимизаторка производительности",
+      "emoji_male": "⚡",
+      "emoji_female": "🚀",
+      "description": "Ищет узкие места и неэффективный код",
+      "score_range": [5, 8],
+      "focus": ["Алгоритмы", "Память", "CPU", "Масштабируемость"],
+      "vote_weight": 1.5
+    },
+    {
+      "type": "testing_expert",
+      "title_male": "Эксперт по тестированию",
+      "title_female": "Экспертка по тестированию",
+      "emoji_male": "🧪",
+      "emoji_female": "🔬",
+      "description": "Проверяет качество тестов и тестовое покрытие",
+      "score_range": [4, 8],
+      "focus": ["Unit тесты", "Integration тесты", "Edge cases", "Mocking"],
+      "vote_weight": 1.6
+    },
+    {
+      "type": "architecture_guru",
+      "title_male": "Архитектор-гуру",
+      "title_female": "Архитекторка-гуру",
+      "emoji_male": "🏛️",
+      "emoji_female": "🏗️",
+      "description": "Оценивает архитектуру и дизайн системы",
+      "score_range": [5, 9],
+      "focus": ["SOLID принципы", "Паттерны", "Модульность", "Связность"],
+      "vote_weight": 1.8
+    },
+    {
+      "type": "user_experience",
+      "title_male": "Адвокат пользователя",
+      "title_female": "Адвокатка пользователя",
+      "emoji_male": "👤",
+      "emoji_female": "👥",
+      "description": "Смотрит на код с точки зрения конечного пользователя",
+      "score_range": [6, 9],
+      "focus": ["API дизайн", "Сообщения об ошибках", "Документация API", "UX"],
+      "vote_weight": 1.1
+    },
+    {
+      "type": "maintenance_focused",
+      "title_male": "Сторонник поддерживаемости",
+      "title_female": "Сторонница поддерживаемости",
+      "emoji_male": "🔧",
+      "emoji_female": "🛠️",
+      "description": "Ценит код, который легко поддерживать и расширять",
+      "score_range": [5, 9],
+      "focus": ["Читаемость", "Рефакторинг", "Технический долг", "Legacy"],
+      "vote_weight": 1.2
     }
   ]
 }
