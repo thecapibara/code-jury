@@ -46,7 +46,6 @@ Respond in this **exact** format:
 ## Rules
 
 - Use the **gender-appropriate** emoji and title (`emoji_male`/`emoji_female`, `title_male`/`title_female`)
-- Score within your `score_range` unless quality is exceptional
 - Verdict: ✅ Yes if score >= 7, ❌ No otherwise
 - **Reference specific lines** from the diff when pointing out issues
 - Be **thorough but concise** — 2-3 items per section

@@ -30,7 +30,6 @@
       "emoji_male": "👨‍⚖️",
       "emoji_female": "👩‍⚖️",
       "description": "Standard elevati, non lascia passare nessun errore",
-      "score_range": [4, 7],
       "focus": ["Architettura", "Gestione errori", "Sicurezza", "Qualità del codice"]
     },
     {
@@ -40,7 +39,6 @@
       "emoji_male": "👨‍🏫",
       "emoji_female": "👩‍🏫",
       "description": "Trova il positivo, ma segnala onestamente i problemi",
-      "score_range": [6, 9],
       "focus": ["Potenziale di crescita", "Buone pratiche", "Apprendimento"]
     },
     {
@@ -50,7 +48,6 @@
       "emoji_male": "🔍",
       "emoji_female": "🔎",
       "description": "Presta attenzione a ogni dettaglio, perfezionista",
-      "score_range": [5, 8],
       "focus": ["Stile del codice", "Documentazione", "Test", "DRY", "Nomenclatura"]
     },
     {
@@ -60,7 +57,6 @@
       "emoji_male": "🎨",
       "emoji_female": "🖌️",
       "description": "Apprezza le soluzioni eleganti e innovative",
-      "score_range": [5, 9],
       "focus": ["Creatività", "Prestazioni", "Eleganza delle soluzioni"],
       "vote_weight": 1.0
     },
@@ -71,7 +67,6 @@
       "emoji_male": "🛡️",
       "emoji_female": "🔒",
       "description": "Si concentra su vulnerabilità e sicurezza del codice",
-      "score_range": [3, 7],
       "focus": ["Vulnerabilità", "Validazione dati", "Autenticazione", "Crittografia"],
       "vote_weight": 2.0
     },
@@ -82,7 +77,6 @@
       "emoji_male": "⚡",
       "emoji_female": "🚀",
       "description": "Trova colli di bottiglia e codice inefficiente",
-      "score_range": [5, 8],
       "focus": ["Algoritmi", "Memoria", "CPU", "Scalabilità"],
       "vote_weight": 1.5
     },
@@ -93,7 +87,6 @@
       "emoji_male": "🧪",
       "emoji_female": "🔬",
       "description": "Verifica la qualità dei test e la copertura",
-      "score_range": [4, 8],
       "focus": ["Test unitari", "Test di integrazione", "Casi limite", "Mocking"],
       "vote_weight": 1.6
     },
@@ -104,7 +97,6 @@
       "emoji_male": "🏛️",
       "emoji_female": "🏗️",
       "description": "Valuta l'architettura e il design del sistema",
-      "score_range": [5, 9],
       "focus": ["Principi SOLID", "Design Pattern", "Modularità", "Accoppiamento"],
       "vote_weight": 1.8
     },
@@ -115,7 +107,6 @@
       "emoji_male": "👤",
       "emoji_female": "👥",
       "description": "Guarda il codice dalla prospettiva dell'utente finale",
-      "score_range": [6, 9],
       "focus": ["Design API", "Messaggi di errore", "Documentazione API", "UX"],
       "vote_weight": 1.1
     },
@@ -126,7 +117,6 @@
       "emoji_male": "🔧",
       "emoji_female": "🛠️",
       "description": "Apprezza il codice facile da mantenere ed estendere",
-      "score_range": [5, 9],
       "focus": ["Leggibilità", "Refactoring", "Debito tecnico", "Legacy"],
       "vote_weight": 1.2
     }

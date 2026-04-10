@@ -55,32 +55,37 @@ bash install.sh --all --global
 
 ```bash
 cd ~/.qwen/skills/vote  # or .qwen/skills/vote
-python3 scripts/vote.py --help
+python3 scripts/select_judges.py --help
 ```
 
 ## 🎯 Usage
 
 ### Qwen Code
 
-Just ask Qwen Code to evaluate your code:
+Use the slash command:
 
+```
+/vote                     # Evaluate unstaged changes
+/vote --mode lightning    # Quick check (fast, cheap)
+/vote --mode thorough     # Deep review (slow, thorough)
+/vote last commit         # Last commit
+/vote last 3 commits      # Last 3 commits
+/vote branch feature-auth # Branch changes
+```
+
+Or just ask naturally:
 - *"Evaluate my changes"*
 - *"Check the last commit"*
 - *"Vote on my feature branch"*
-
-Or explicitly: `/skills vote`
-
-Direct script:
-```bash
-python3 .qwen/skills/vote/scripts/vote.py [args]
-```
 
 ### Claude Code
 
 Use the slash command:
 
 ```
-/vote                    # Evaluate unstaged changes
+/vote                     # Evaluate unstaged changes
+/vote --mode lightning    # Quick check (fast, cheap)
+/vote --mode thorough     # Deep review (slow, thorough)
 /vote last commit         # Last commit
 /vote last 3 commits      # Last 3 commits
 /vote branch feature-auth # Branch changes

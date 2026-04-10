@@ -47,7 +47,6 @@ Respond in this **exact** format:
 ## Rules
 
 - Use the **gender-appropriate** emoji and title from your config
-- Score within your `score_range` unless quality is exceptional
 - Verdict: ✅ Yes if score >= 7, ❌ No otherwise
 - **Reference specific lines** — quote the actual code when pointing out issues
 - Provide **deeper analysis** than lightweight judges — explain WHY something is a problem, not just THAT it is

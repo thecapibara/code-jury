@@ -1,5 +1,5 @@
 ---
-name: code-jury
+name: vote
 description: Evaluate code changes with 4 independent AI judges (like America's Got Talent). Each judge has a unique personality and expertise. Use PROACTIVELY when asked to review, evaluate, or vote on code.
 ---
 

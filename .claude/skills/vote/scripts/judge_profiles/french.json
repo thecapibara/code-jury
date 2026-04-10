@@ -30,8 +30,8 @@
       "emoji_male": "👨‍⚖️",
       "emoji_female": "👩‍⚖️",
       "description": "Standards élevés, ne laisse passer aucune erreur",
-      "score_range": [4, 7],
-      "focus": ["Architecture", "Gestion des erreurs", "Sécurité", "Qualité du code"]
+      "focus": ["Architecture", "Gestion des erreurs", "Sécurité", "Qualité du code"],
+      "vote_weight": 1.7
     },
     {
       "type": "supportive",
@@ -40,7 +40,6 @@
       "emoji_male": "👨‍🏫",
       "emoji_female": "👩‍🏫",
       "description": "Trouve le positif, mais signale honnêtement les problèmes",
-      "score_range": [6, 9],
       "focus": ["Potentiel de croissance", "Bonnes pratiques", "Apprentissage"]
     },
     {
@@ -50,7 +49,6 @@
       "emoji_male": "🔍",
       "emoji_female": "🔎",
       "description": "Prête attention à chaque détail, perfectionniste",
-      "score_range": [5, 8],
       "focus": ["Style de code", "Documentation", "Tests", "DRY", "Nommage"]
     },
     {
@@ -60,7 +58,6 @@
       "emoji_male": "🎨",
       "emoji_female": "🖌️",
       "description": "Apprécie les solutions élégantes et innovantes",
-      "score_range": [5, 9],
       "focus": ["Créativité", "Performance", "Élégance des solutions"],
       "vote_weight": 1.0
     },
@@ -71,7 +68,6 @@
       "emoji_male": "🛡️",
       "emoji_female": "🔒",
       "description": "Se concentre sur les vulnérabilités et la sécurité du code",
-      "score_range": [3, 7],
       "focus": ["Vulnérabilités", "Validation des données", "Authentification", "Chiffrement"],
       "vote_weight": 2.0
     },
@@ -82,7 +78,6 @@
       "emoji_male": "⚡",
       "emoji_female": "🚀",
       "description": "Trouve les goulots d'étranglement et le code inefficace",
-      "score_range": [5, 8],
       "focus": ["Algorithmes", "Mémoire", "CPU", "Évolutivité"],
       "vote_weight": 1.5
     },
@@ -93,7 +88,6 @@
       "emoji_male": "🧪",
       "emoji_female": "🔬",
       "description": "Vérifie la qualité des tests et la couverture",
-      "score_range": [4, 8],
       "focus": ["Tests unitaires", "Tests d'intégration", "Cas limites", "Mocking"],
       "vote_weight": 1.6
     },
@@ -104,7 +98,6 @@
       "emoji_male": "🏛️",
       "emoji_female": "🏗️",
       "description": "Évalue l'architecture et le design du système",
-      "score_range": [5, 9],
       "focus": ["Principes SOLID", "Design Patterns", "Modularité", "Couplage"],
       "vote_weight": 1.8
     },
@@ -115,7 +108,6 @@
       "emoji_male": "👤",
       "emoji_female": "👥",
       "description": "Regarde le code du point de vue de l'utilisateur final",
-      "score_range": [6, 9],
       "focus": ["Design d'API", "Messages d'erreur", "Documentation API", "UX"],
       "vote_weight": 1.1
     },
@@ -126,7 +118,6 @@
       "emoji_male": "🔧",
       "emoji_female": "🛠️",
       "description": "Apprécie le code facile à maintenir et à étendre",
-      "score_range": [5, 9],
       "focus": ["Lisibilité", "Refactoring", "Dette technique", "Legacy"],
       "vote_weight": 1.2
     }
