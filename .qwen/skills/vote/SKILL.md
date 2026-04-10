@@ -9,148 +9,70 @@ description: Evaluate code changes with 4 independent AI judges (like America's 
 
 ## How It Works
 
-1. **Select 4 random judges** from 10 personality types
-2. **Assign names** from the detected language
-3. **Spawn 4 sub-agents** in parallel with their personality + name
-4. **Aggregate results** with weighted voting + common issue bonus
+1. **Ask for quality mode** (interactive menu or parse `--mode` flag)
+2. **Select 4 random judges** from 10 personality types with localized names
+3. **Spawn 4 sub-agents** in parallel with personality + name
+4. **Aggregate results** with weighted voting + consensus detection
 
 ## Step-by-Step
 
-### Step 1: Detect language from user's message
+### Step 0: Choose quality mode
 
-Look at the user's language and map to code:
-- Ukrainian → `uk`
-- English → `en`
-- Russian → `ru`
-- Arabic → `ar`
-- Polish → `pl`
-- Spanish → `es`
-- German → `de`
-- French → `fr`
-- Italian → `it`
+Check for `--mode` flag in user's request:
+- `--mode lightning` — 4× Haiku (швидко, дешево, для дрібних змін)
+- `--mode thorough` — 4× Sonnet (ретельно, для важливих ревью)
+- No flag → **balanced** (2× Sonnet + 2× Haiku, default)
 
-### Step 2: Get the code diff
+### Step 1: Get the code diff
 
-Run appropriate git command based on user request.
+**Fallback chain** — try each until one works:
+1. `git diff HEAD` — unstaged changes with commits
+2. `git diff` — changes vs index (no commits yet)
+3. No `.git` → ask user which files to review
 
-### Step 3: Select judges and assign names
+### Step 2: Detect language & select judges
 
-Run:
+Detect language from user's conversation context, then run:
 ```bash
-python3 .qwen/skills/vote/select_judges.py --lang <code>
+python3 .qwen/skills/vote/scripts/select_judges.py --lang <code> --mode <mode>
 ```
 
-This outputs 4 judge configs. Each judge has:
-- `assigned_name` — localized name (e.g., "Оксана", "Alex")
-- `assigned_gender` — "male" or "female"
-- `personality.type` — strict, supportive, etc.
-- `personality.title_male` / `title_female` — personality title
-- `personality.emoji_male` / `personality.emoji_female` — emoji
-- `personality.score_range` — [min, max]
-- `personality.focus` — expertise areas
-- `personality.vote_weight` — weight (e.g., 1.5)
-- `model` — "haiku" or "sonnet" (for Claude) or "inherit" (for Qwen)
+### Step 3: Spawn 4 sub-agents
 
-### Step 4: Spawn 4 sub-agents
+Use `.qwen/agents/jury-judge.md` for ALL 4 judges (model: inherit).
+Pass each judge their personality JSON + code diff.
 
-For each judge, spawn the appropriate sub-agent:
-- **Claude:** `jury-judge-haiku` if model=haiku, `jury-judge-sonnet` if model=sonnet
-- **Qwen:** `jury-judge` (inherits model)
+### Step 4: Aggregate results
 
-Pass to each sub-agent:
-```
-You are {assigned_name}. Your personality: {personality.description}
-Your role: {personality.title_female or title_female based on gender}
-Focus on: {personality.focus}
-Score range: {personality.score_range}
-Vote weight: {personality.vote_weight}x
+**Consensus detection:**
+- Extract issues from each judge's "❌ What I disliked"
+- Issues mentioned by 3+ judges → consensus (high priority)
+- Issues mentioned by 2 judges → shared (medium priority)
 
-Evaluate this code diff:
-{diff}
-```
+**Weighted score:**
+- `sum(score_i × vote_weight_i) / sum(vote_weight_i)`
+- Consensus penalty: `-0.3` per issue with 3+ mentions (max `-1.0`)
 
-Spawn ALL 4 in parallel. They work independently.
+**Pass threshold:** weighted "Yes" >= 60% of total weight
 
-### Step 5: Aggregate results
+## Judge Types
 
-Collect all 4 verdicts and compute:
-
-**1. Weighted score:** `sum(score * vote_weight) / sum(vote_weight)`
-
-**2. Common issue bonus:** If 3+ judges mention the same issue → add -0.5 to score (penalty)
-
-**3. Pass threshold:** weighted "Yes" votes >= 60% of total weight
-
-**4. Find top issues** — issues mentioned by multiple judges get priority
-
-**Format the output:**
-
-```
-🎭 Code Jury Results
-============================================================
-
-{For each judge:}
-{emoji} {assigned_name} ({personality_title}) (weight: {vote_weight}x)
-  ✅ {likes}
-  ❌ {dislikes}
-  📊 {score}/10 | {verdict}
-
-============================================================
-📊 Summary: {weighted_yes} ✅ Yes | {weighted_no} ❌ No (weighted)
-🎯 Weighted Score: {avg}/10
-⚠️ Common issues (mentioned by 3+ judges):
-  • {most common issue}
-
-{🎉 PASSED or 😔 FAILED message}
-
-💡 Top improvement tips:
-  • {most common issue} (mentioned by X judges)
-  • {second most common issue} (mentioned by Y judges)
-```
-
-## Judge Types & Models
-
-| Personality | Weight | Model | Focus |
-|-------------|--------|-------|-------|
-| Strict Critic | 1.5x | sonnet | Architecture, errors, security |
-| Supportive Mentor | 1.0x | haiku | Potential, best practices |
-| Detail-Oriented | 1.2x | haiku | Style, docs, tests, DRY |
-| Creative Engineer | 1.0x | haiku | Creativity, performance |
-| Security Expert | 1.8x | sonnet | Vulnerabilities, validation |
-| Performance Optimizer | 1.3x | sonnet | Algorithms, memory, CPU |
-| Testing Expert | 1.4x | sonnet | Unit tests, edge cases |
-| Architecture Guru | 1.6x | sonnet | SOLID, patterns, modularity |
-| UX Advocate | 1.1x | haiku | API design, UX |
-| Maintenance Focus | 1.2x | haiku | Readability, tech debt |
-
-## Quality Modes
-
-The user can specify a quality mode:
-
-| Mode | Models | Cost | Use when |
-|------|--------|------|----------|
-| **Economy** 💰 | 4× Haiku | ~$0.01 | Quick checks, drafts |
-| **Standard** ⚖️ | 2× Sonnet + 2× Haiku | ~$0.03 | Default, balanced |
-| **Premium** 🏆 | 4× Sonnet | ~$0.05 | Final reviews, important changes |
-
-If no mode specified, use **Standard**.
-
-To override: filter judges by model after selection:
-- Economy: force all to haiku
-- Premium: force all to sonnet
-- Standard: keep original model assignments
-
-## Language Support
-
-Names are localized via `scripts/judge_profiles/<lang>.json`:
-- Each file has `name_pool` with 20-30 names + gender
-- Each file has `personalities` with localized titles
+| Personality | Weight | Focus |
+|-------------|--------|-------|
+| Strict Critic | **1.7x** | Architecture, errors, security |
+| Supportive Mentor | 1.0x | Potential, best practices |
+| Detail-Oriented | 1.2x | Style, docs, tests, DRY |
+| Creative Engineer | 1.0x | Creativity, performance |
+| **Security Expert** | **2.0x** | Vulnerabilities, validation |
+| **Performance Optimizer** | **1.5x** | Algorithms, memory, CPU |
+| **Testing Expert** | **1.6x** | Unit tests, edge cases |
+| **Architecture Guru** | **1.8x** | SOLID, patterns, modularity |
+| UX Advocate | 1.1x | API design, UX |
+| Maintenance Focus | 1.2x | Readability, tech debt |
 
 ## Files
 
-- `select_judges.py` — selects 4 random judges with names
-- `.qwen/agents/jury-judge.md` — Qwen sub-agent
-- `.claude/agents/jury-judge-haiku.md` — Claude lightweight judge
-- `.claude/agents/jury-judge-sonnet.md` — Claude expert judge
-- `scripts/judge_profiles/*.json` — name pools per language
-- `judges.json` — 10 personality types with model + weight
+- `scripts/select_judges.py` — selects 4 judges with localization
+- `scripts/judge_profiles/*.json` — 9 language profiles
+- `.qwen/agents/jury-judge.md` — sub-agent for each judge
+- `judges.json` — source of truth for weights & models
