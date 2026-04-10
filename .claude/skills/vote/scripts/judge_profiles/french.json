@@ -1,26 +1,86 @@
 {
   "language": "french",
   "name_pool": [
-    {"name": "Pierre", "gender": "male"},
-    {"name": "Camille", "gender": "female"},
-    {"name": "Luc", "gender": "male"},
-    {"name": "Marie", "gender": "female"},
-    {"name": "Antoine", "gender": "male"},
-    {"name": "Sophie", "gender": "female"},
-    {"name": "Nicolas", "gender": "male"},
-    {"name": "Isabelle", "gender": "female"},
-    {"name": "Philippe", "gender": "male"},
-    {"name": "Nathalie", "gender": "female"},
-    {"name": "Laurent", "gender": "male"},
-    {"name": "Céline", "gender": "female"},
-    {"name": "Franck", "gender": "male"},
-    {"name": "Valérie", "gender": "female"},
-    {"name": "Christophe", "gender": "male"},
-    {"name": "Sandrine", "gender": "female"},
-    {"name": "Olivier", "gender": "male"},
-    {"name": "Audrey", "gender": "female"},
-    {"name": "Sébastien", "gender": "male"},
-    {"name": "Émilie", "gender": "female"}
+    {
+      "name": "Pierre",
+      "gender": "male"
+    },
+    {
+      "name": "Camille",
+      "gender": "female"
+    },
+    {
+      "name": "Luc",
+      "gender": "male"
+    },
+    {
+      "name": "Marie",
+      "gender": "female"
+    },
+    {
+      "name": "Antoine",
+      "gender": "male"
+    },
+    {
+      "name": "Sophie",
+      "gender": "female"
+    },
+    {
+      "name": "Nicolas",
+      "gender": "male"
+    },
+    {
+      "name": "Isabelle",
+      "gender": "female"
+    },
+    {
+      "name": "Philippe",
+      "gender": "male"
+    },
+    {
+      "name": "Nathalie",
+      "gender": "female"
+    },
+    {
+      "name": "Laurent",
+      "gender": "male"
+    },
+    {
+      "name": "Céline",
+      "gender": "female"
+    },
+    {
+      "name": "Franck",
+      "gender": "male"
+    },
+    {
+      "name": "Valérie",
+      "gender": "female"
+    },
+    {
+      "name": "Christophe",
+      "gender": "male"
+    },
+    {
+      "name": "Sandrine",
+      "gender": "female"
+    },
+    {
+      "name": "Olivier",
+      "gender": "male"
+    },
+    {
+      "name": "Audrey",
+      "gender": "female"
+    },
+    {
+      "name": "Sébastien",
+      "gender": "male"
+    },
+    {
+      "name": "Émilie",
+      "gender": "female"
+    }
   ],
   "personalities": [
     {
@@ -30,7 +90,12 @@
       "emoji_male": "👨‍⚖️",
       "emoji_female": "👩‍⚖️",
       "description": "Standards élevés, ne laisse passer aucune erreur",
-      "focus": ["Architecture", "Gestion des erreurs", "Sécurité", "Qualité du code"],
+      "focus": [
+        "Architecture",
+        "Gestion des erreurs",
+        "Sécurité",
+        "Qualité du code"
+      ],
       "vote_weight": 1.7
     },
     {
@@ -40,7 +105,12 @@
       "emoji_male": "👨‍🏫",
       "emoji_female": "👩‍🏫",
       "description": "Trouve le positif, mais signale honnêtement les problèmes",
-      "focus": ["Potentiel de croissance", "Bonnes pratiques", "Apprentissage"]
+      "focus": [
+        "Potentiel de croissance",
+        "Bonnes pratiques",
+        "Apprentissage"
+      ],
+      "vote_weight": 1.0
     },
     {
       "type": "detail_oriented",
@@ -49,7 +119,14 @@
       "emoji_male": "🔍",
       "emoji_female": "🔎",
       "description": "Prête attention à chaque détail, perfectionniste",
-      "focus": ["Style de code", "Documentation", "Tests", "DRY", "Nommage"]
+      "focus": [
+        "Style de code",
+        "Documentation",
+        "Tests",
+        "DRY",
+        "Nommage"
+      ],
+      "vote_weight": 1.2
     },
     {
       "type": "creative",
@@ -58,7 +135,11 @@
       "emoji_male": "🎨",
       "emoji_female": "🖌️",
       "description": "Apprécie les solutions élégantes et innovantes",
-      "focus": ["Créativité", "Performance", "Élégance des solutions"],
+      "focus": [
+        "Créativité",
+        "Performance",
+        "Élégance des solutions"
+      ],
       "vote_weight": 1.0
     },
     {
@@ -68,7 +149,12 @@
       "emoji_male": "🛡️",
       "emoji_female": "🔒",
       "description": "Se concentre sur les vulnérabilités et la sécurité du code",
-      "focus": ["Vulnérabilités", "Validation des données", "Authentification", "Chiffrement"],
+      "focus": [
+        "Vulnérabilités",
+        "Validation des données",
+        "Authentification",
+        "Chiffrement"
+      ],
       "vote_weight": 2.0
     },
     {
@@ -78,7 +164,12 @@
       "emoji_male": "⚡",
       "emoji_female": "🚀",
       "description": "Trouve les goulots d'étranglement et le code inefficace",
-      "focus": ["Algorithmes", "Mémoire", "CPU", "Évolutivité"],
+      "focus": [
+        "Algorithmes",
+        "Mémoire",
+        "CPU",
+        "Évolutivité"
+      ],
       "vote_weight": 1.5
     },
     {
@@ -88,7 +179,12 @@
       "emoji_male": "🧪",
       "emoji_female": "🔬",
       "description": "Vérifie la qualité des tests et la couverture",
-      "focus": ["Tests unitaires", "Tests d'intégration", "Cas limites", "Mocking"],
+      "focus": [
+        "Tests unitaires",
+        "Tests d'intégration",
+        "Cas limites",
+        "Mocking"
+      ],
       "vote_weight": 1.6
     },
     {
@@ -98,7 +194,12 @@
       "emoji_male": "🏛️",
       "emoji_female": "🏗️",
       "description": "Évalue l'architecture et le design du système",
-      "focus": ["Principes SOLID", "Design Patterns", "Modularité", "Couplage"],
+      "focus": [
+        "Principes SOLID",
+        "Design Patterns",
+        "Modularité",
+        "Couplage"
+      ],
       "vote_weight": 1.8
     },
     {
@@ -108,7 +209,12 @@
       "emoji_male": "👤",
       "emoji_female": "👥",
       "description": "Regarde le code du point de vue de l'utilisateur final",
-      "focus": ["Design d'API", "Messages d'erreur", "Documentation API", "UX"],
+      "focus": [
+        "Design d'API",
+        "Messages d'erreur",
+        "Documentation API",
+        "UX"
+      ],
       "vote_weight": 1.1
     },
     {
@@ -118,7 +224,12 @@
       "emoji_male": "🔧",
       "emoji_female": "🛠️",
       "description": "Apprécie le code facile à maintenir et à étendre",
-      "focus": ["Lisibilité", "Refactoring", "Dette technique", "Legacy"],
+      "focus": [
+        "Lisibilité",
+        "Refactoring",
+        "Dette technique",
+        "Legacy"
+      ],
       "vote_weight": 1.2
     }
   ]

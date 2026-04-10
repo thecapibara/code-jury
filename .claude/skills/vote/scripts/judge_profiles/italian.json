@@ -1,26 +1,86 @@
 {
   "language": "italian",
   "name_pool": [
-    {"name": "Marco", "gender": "male"},
-    {"name": "Giulia", "gender": "female"},
-    {"name": "Luca", "gender": "male"},
-    {"name": "Francesca", "gender": "female"},
-    {"name": "Alessandro", "gender": "male"},
-    {"name": "Sara", "gender": "female"},
-    {"name": "Lorenzo", "gender": "male"},
-    {"name": "Chiara", "gender": "female"},
-    {"name": "Giovanni", "gender": "male"},
-    {"name": "Elena", "gender": "female"},
-    {"name": "Andrea", "gender": "male"},
-    {"name": "Silvia", "gender": "female"},
-    {"name": "Matteo", "gender": "male"},
-    {"name": "Anna", "gender": "female"},
-    {"name": "Davide", "gender": "male"},
-    {"name": "Laura", "gender": "female"},
-    {"name": "Roberto", "gender": "male"},
-    {"name": "Valentina", "gender": "female"},
-    {"name": "Stefano", "gender": "male"},
-    {"name": "Martina", "gender": "female"}
+    {
+      "name": "Marco",
+      "gender": "male"
+    },
+    {
+      "name": "Giulia",
+      "gender": "female"
+    },
+    {
+      "name": "Luca",
+      "gender": "male"
+    },
+    {
+      "name": "Francesca",
+      "gender": "female"
+    },
+    {
+      "name": "Alessandro",
+      "gender": "male"
+    },
+    {
+      "name": "Sara",
+      "gender": "female"
+    },
+    {
+      "name": "Lorenzo",
+      "gender": "male"
+    },
+    {
+      "name": "Chiara",
+      "gender": "female"
+    },
+    {
+      "name": "Giovanni",
+      "gender": "male"
+    },
+    {
+      "name": "Elena",
+      "gender": "female"
+    },
+    {
+      "name": "Andrea",
+      "gender": "male"
+    },
+    {
+      "name": "Silvia",
+      "gender": "female"
+    },
+    {
+      "name": "Matteo",
+      "gender": "male"
+    },
+    {
+      "name": "Anna",
+      "gender": "female"
+    },
+    {
+      "name": "Davide",
+      "gender": "male"
+    },
+    {
+      "name": "Laura",
+      "gender": "female"
+    },
+    {
+      "name": "Roberto",
+      "gender": "male"
+    },
+    {
+      "name": "Valentina",
+      "gender": "female"
+    },
+    {
+      "name": "Stefano",
+      "gender": "male"
+    },
+    {
+      "name": "Martina",
+      "gender": "female"
+    }
   ],
   "personalities": [
     {
@@ -30,7 +90,13 @@
       "emoji_male": "👨‍⚖️",
       "emoji_female": "👩‍⚖️",
       "description": "Standard elevati, non lascia passare nessun errore",
-      "focus": ["Architettura", "Gestione errori", "Sicurezza", "Qualità del codice"]
+      "focus": [
+        "Architettura",
+        "Gestione errori",
+        "Sicurezza",
+        "Qualità del codice"
+      ],
+      "vote_weight": 1.7
     },
     {
       "type": "supportive",
@@ -39,7 +105,12 @@
       "emoji_male": "👨‍🏫",
       "emoji_female": "👩‍🏫",
       "description": "Trova il positivo, ma segnala onestamente i problemi",
-      "focus": ["Potenziale di crescita", "Buone pratiche", "Apprendimento"]
+      "focus": [
+        "Potenziale di crescita",
+        "Buone pratiche",
+        "Apprendimento"
+      ],
+      "vote_weight": 1.0
     },
     {
       "type": "detail_oriented",
@@ -48,7 +119,14 @@
       "emoji_male": "🔍",
       "emoji_female": "🔎",
       "description": "Presta attenzione a ogni dettaglio, perfezionista",
-      "focus": ["Stile del codice", "Documentazione", "Test", "DRY", "Nomenclatura"]
+      "focus": [
+        "Stile del codice",
+        "Documentazione",
+        "Test",
+        "DRY",
+        "Nomenclatura"
+      ],
+      "vote_weight": 1.2
     },
     {
       "type": "creative",
@@ -57,7 +135,11 @@
       "emoji_male": "🎨",
       "emoji_female": "🖌️",
       "description": "Apprezza le soluzioni eleganti e innovative",
-      "focus": ["Creatività", "Prestazioni", "Eleganza delle soluzioni"],
+      "focus": [
+        "Creatività",
+        "Prestazioni",
+        "Eleganza delle soluzioni"
+      ],
       "vote_weight": 1.0
     },
     {
@@ -67,7 +149,12 @@
       "emoji_male": "🛡️",
       "emoji_female": "🔒",
       "description": "Si concentra su vulnerabilità e sicurezza del codice",
-      "focus": ["Vulnerabilità", "Validazione dati", "Autenticazione", "Crittografia"],
+      "focus": [
+        "Vulnerabilità",
+        "Validazione dati",
+        "Autenticazione",
+        "Crittografia"
+      ],
       "vote_weight": 2.0
     },
     {
@@ -77,7 +164,12 @@
       "emoji_male": "⚡",
       "emoji_female": "🚀",
       "description": "Trova colli di bottiglia e codice inefficiente",
-      "focus": ["Algoritmi", "Memoria", "CPU", "Scalabilità"],
+      "focus": [
+        "Algoritmi",
+        "Memoria",
+        "CPU",
+        "Scalabilità"
+      ],
       "vote_weight": 1.5
     },
     {
@@ -87,7 +179,12 @@
       "emoji_male": "🧪",
       "emoji_female": "🔬",
       "description": "Verifica la qualità dei test e la copertura",
-      "focus": ["Test unitari", "Test di integrazione", "Casi limite", "Mocking"],
+      "focus": [
+        "Test unitari",
+        "Test di integrazione",
+        "Casi limite",
+        "Mocking"
+      ],
       "vote_weight": 1.6
     },
     {
@@ -97,7 +194,12 @@
       "emoji_male": "🏛️",
       "emoji_female": "🏗️",
       "description": "Valuta l'architettura e il design del sistema",
-      "focus": ["Principi SOLID", "Design Pattern", "Modularità", "Accoppiamento"],
+      "focus": [
+        "Principi SOLID",
+        "Design Pattern",
+        "Modularità",
+        "Accoppiamento"
+      ],
       "vote_weight": 1.8
     },
     {
@@ -107,7 +209,12 @@
       "emoji_male": "👤",
       "emoji_female": "👥",
       "description": "Guarda il codice dalla prospettiva dell'utente finale",
-      "focus": ["Design API", "Messaggi di errore", "Documentazione API", "UX"],
+      "focus": [
+        "Design API",
+        "Messaggi di errore",
+        "Documentazione API",
+        "UX"
+      ],
       "vote_weight": 1.1
     },
     {
@@ -117,7 +224,12 @@
       "emoji_male": "🔧",
       "emoji_female": "🛠️",
       "description": "Apprezza il codice facile da mantenere ed estendere",
-      "focus": ["Leggibilità", "Refactoring", "Debito tecnico", "Legacy"],
+      "focus": [
+        "Leggibilità",
+        "Refactoring",
+        "Debito tecnico",
+        "Legacy"
+      ],
       "vote_weight": 1.2
     }
   ]

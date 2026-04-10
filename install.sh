@@ -55,6 +55,8 @@ JUDGES_JSON="$SCRIPT_DIR/judges.json"
 PROFILES_DIR="$SCRIPT_DIR/.claude/skills/vote/scripts/judge_profiles"
 CLAUDE_CMD="$SCRIPT_DIR/.claude/commands/vote.md"
 QWEN_SKILL="$SCRIPT_DIR/.qwen/skills/vote/SKILL.md"
+QWEN_AGENT="$SCRIPT_DIR/.qwen/agents/jury-judge.md"
+CLAUDE_AGENTS_DIR="$SCRIPT_DIR/.claude/agents"
 
 # ─── Helper: copy shared files into target dir ───
 copy_shared() {
@@ -99,8 +101,10 @@ update_gitignore() {
 install_qwen() {
     if [ "$GLOBAL" = true ]; then
         TARGET_DIR="$HOME/.qwen/skills/vote"
+        AGENTS_DIR="$HOME/.qwen/agents"
     else
         TARGET_DIR="$PROJECT_DIR/.qwen/skills/vote"
+        AGENTS_DIR="$PROJECT_DIR/.qwen/agents"
     fi
 
     echo -e "${CYAN}📦 Installing for Qwen Code...${NC}"
@@ -112,6 +116,12 @@ install_qwen() {
         cp "$QWEN_SKILL" "$TARGET_DIR/SKILL.md"
     fi
 
+    # Install Qwen agent
+    if [ -f "$QWEN_AGENT" ]; then
+        mkdir -p "$AGENTS_DIR"
+        cp "$QWEN_AGENT" "$AGENTS_DIR/jury-judge.md"
+    fi
+
     update_gitignore ".qwen/skills/vote"
 
     echo -e "   ${GREEN}✅ Qwen Code skill installed${NC}"
@@ -121,8 +131,10 @@ install_qwen() {
 install_claude() {
     if [ "$GLOBAL" = true ]; then
         TARGET_DIR="$HOME/.claude/skills/vote"
+        AGENTS_DIR="$HOME/.claude/agents"
     else
         TARGET_DIR="$PROJECT_DIR/.claude/skills/vote"
+        AGENTS_DIR="$PROJECT_DIR/.claude/agents"
     fi
 
     echo -e "${CYAN}📦 Installing for Claude Code...${NC}"
@@ -133,6 +145,12 @@ install_claude() {
     if [ "$GLOBAL" = false ] && [ -f "$CLAUDE_CMD" ]; then
         mkdir -p "$PROJECT_DIR/.claude/commands"
         cp "$CLAUDE_CMD" "$PROJECT_DIR/.claude/commands/vote.md"
+    fi
+
+    # Install Claude agents
+    if [ -d "$CLAUDE_AGENTS_DIR" ]; then
+        mkdir -p "$AGENTS_DIR"
+        cp "$CLAUDE_AGENTS_DIR/"*.md "$AGENTS_DIR/"
     fi
 
     update_gitignore ".claude/skills/vote"

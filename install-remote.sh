@@ -59,6 +59,8 @@ git -C "$PROJECT_DIR" rev-parse --is-inside-work-tree > /dev/null 2>&1 && IS_GIT
 
 # ─── Files to download ───
 PROFILES=(ukrainian english arabic russian polish spanish german french italian)
+AGENTS_QWEN=(jury-judge.md)
+AGENTS_CLAUDE=(jury-judge-haiku.md jury-judge-sonnet.md)
 
 download_file() {
     local url="$1" dest="$2" desc="$3"
@@ -115,8 +117,10 @@ update_gitignore() {
 install_qwen() {
     if [ "$GLOBAL" = true ]; then
         TARGET_DIR="$HOME/.qwen/skills/vote"
+        AGENTS_DIR="$HOME/.qwen/agents"
     else
         TARGET_DIR="$PROJECT_DIR/.qwen/skills/vote"
+        AGENTS_DIR="$PROJECT_DIR/.qwen/agents"
     fi
 
     echo -e "${CYAN}📦 Installing for Qwen Code...${NC}"
@@ -125,6 +129,13 @@ install_qwen() {
 
     download_shared "$TARGET_DIR"
     download_file "$BASE_URL/.qwen/skills/vote/SKILL.md" "$TARGET_DIR/SKILL.md" "SKILL.md"
+
+    # Download Qwen agent
+    mkdir -p "$AGENTS_DIR"
+    for agent in "${AGENTS_QWEN[@]}"; do
+        download_file "$BASE_URL/.qwen/agents/$agent" "$AGENTS_DIR/$agent" "$agent"
+    done
+
     update_gitignore ".qwen/skills/vote"
 
     echo ""
@@ -135,8 +146,10 @@ install_qwen() {
 install_claude() {
     if [ "$GLOBAL" = true ]; then
         TARGET_DIR="$HOME/.claude/skills/vote"
+        AGENTS_DIR="$HOME/.claude/agents"
     else
         TARGET_DIR="$PROJECT_DIR/.claude/skills/vote"
+        AGENTS_DIR="$PROJECT_DIR/.claude/agents"
     fi
 
     echo -e "${CYAN}📦 Installing for Claude Code...${NC}"
@@ -149,6 +162,12 @@ install_claude() {
         mkdir -p "$PROJECT_DIR/.claude/commands"
         download_file "$BASE_URL/.claude/commands/vote.md" "$PROJECT_DIR/.claude/commands/vote.md" "vote.md"
     fi
+
+    # Download Claude agents
+    mkdir -p "$AGENTS_DIR"
+    for agent in "${AGENTS_CLAUDE[@]}"; do
+        download_file "$BASE_URL/.claude/agents/$agent" "$AGENTS_DIR/$agent" "$agent"
+    done
 
     update_gitignore ".claude/skills/vote"
 

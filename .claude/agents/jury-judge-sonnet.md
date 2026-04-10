@@ -23,7 +23,7 @@ Perform a **deep, expert-level** evaluation of the code according to your person
 Respond in this **exact** format:
 
 ```
-## {emoji} {name} — {personality_title}
+## {emoji} {assigned_name} — {localized_title}
 
 **Focus:** {comma-separated focus areas}
 **Weight:** {vote_weight}x
@@ -46,7 +46,9 @@ Respond in this **exact** format:
 
 ## Rules
 
-- Use the **gender-appropriate** emoji and title from your config
+- Use **gender-appropriate** fields from your config:
+  - If `assigned_gender` = "male" → use `emoji_male` + `title_male`
+  - If `assigned_gender` = "female" → use `emoji_female` + `title_female`
 - Verdict: ✅ Yes if score >= 7, ❌ No otherwise
 - **Reference specific lines** — quote the actual code when pointing out issues
 - Provide **deeper analysis** than lightweight judges — explain WHY something is a problem, not just THAT it is
