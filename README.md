@@ -1,8 +1,8 @@
-# 🎭 Vote Skill for Qwen Code
+# Code Jury [Vote]
 
 **4 independent AI judges evaluate your code — like America's Got Talent!**
 
-Each judge has a unique name, personality, and expertise focus. They evaluate your code in parallel and deliver verdicts with scores, likes, dislikes, and actionable feedback.
+Works with Qwen Code, Claude Code, and any other AI coding assistant that supports custom commands/skills.
 
 ## ✨ Features
 
@@ -119,13 +119,13 @@ Each vote uses **4 judges** randomly selected from **10 personality types**:
 
 Each vote uses **4 judges**. Choose the review depth:
 
-| Mode | Judges | Use case |
-|------|--------|----------|
-| ⚡ **Lightning** | 4× Haiku | Quick checks, small changes |
-| ⚖️ **Balanced** | 2× Sonnet + 2× Haiku | Default, optimal balance |
-| 🔍 **Thorough** | 4× Sonnet | Important reviews, security |
+| Mode | Use case |
+|------|----------|
+| ⚡ **Lightning** | Quick checks, small changes |
+| ⚖️ **Balanced** | Default, optimal balance |
+| 🔍 **Thorough** | Important reviews, security |
 
-Claude Code: `/vote --mode thorough` or `/vote --mode lightning`
+Usage: `/vote --mode thorough` or `/vote --mode lightning`
 
 ### The Judges
 
