@@ -130,6 +130,12 @@ install_qwen() {
     download_shared "$TARGET_DIR"
     download_file "$BASE_URL/.qwen/skills/vote/SKILL.md" "$TARGET_DIR/SKILL.md" "SKILL.md"
 
+    # Download Qwen command
+    if [ "$GLOBAL" = false ]; then
+        mkdir -p "$PROJECT_DIR/.qwen/commands"
+        download_file "$BASE_URL/.qwen/commands/vote.md" "$PROJECT_DIR/.qwen/commands/vote.md" "vote.md"
+    fi
+
     # Download Qwen agent
     mkdir -p "$AGENTS_DIR"
     for agent in "${AGENTS_QWEN[@]}"; do

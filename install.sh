@@ -55,6 +55,7 @@ JUDGES_JSON="$SCRIPT_DIR/judges.json"
 PROFILES_DIR="$SCRIPT_DIR/.claude/skills/vote/scripts/judge_profiles"
 CLAUDE_CMD="$SCRIPT_DIR/.claude/commands/vote.md"
 QWEN_SKILL="$SCRIPT_DIR/.qwen/skills/vote/SKILL.md"
+QWEN_CMD="$SCRIPT_DIR/.qwen/commands/vote.md"
 QWEN_AGENT="$SCRIPT_DIR/.qwen/agents/jury-judge.md"
 CLAUDE_AGENTS_DIR="$SCRIPT_DIR/.claude/agents"
 
@@ -114,6 +115,12 @@ install_qwen() {
 
     if [ -f "$QWEN_SKILL" ]; then
         cp "$QWEN_SKILL" "$TARGET_DIR/SKILL.md"
+    fi
+
+    # Install Qwen command
+    if [ "$GLOBAL" = false ] && [ -f "$QWEN_CMD" ]; then
+        mkdir -p "$PROJECT_DIR/.qwen/commands"
+        cp "$QWEN_CMD" "$PROJECT_DIR/.qwen/commands/vote.md"
     fi
 
     # Install Qwen agent
