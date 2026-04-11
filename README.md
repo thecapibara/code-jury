@@ -238,9 +238,22 @@ Judges names and personalities adapt to your language:
 └── skills/vote/             # Claude Code skill
     └── scripts/             # Same scripts as Qwen Code
 
-judges.json                  # Source of truth for judge weights & models
+judges.json                  # Source of truth for judge weights, models, review guides
 install.sh                   # Installer (--remote for download from GitHub)
 select_judges.py             # CLI: judge selection & localization
+
+.claude/skills/vote/scripts/
+└── judge_review_guides/     # Detailed prompts for each judge type
+    ├── strict.md            # Strict Critic checklist
+    ├── security.md          # Security Expert checklist
+    ├── performance.md       # Performance Optimizer checklist
+    ├── testing.md           # Testing Expert checklist
+    ├── architecture.md      # Architecture Guru checklist
+    ├── ux.md                # UX Advocate checklist
+    ├── maintenance.md       # Maintenance Focus checklist
+    ├── detail.md            # Detail-Oriented Reviewer checklist
+    ├── creative.md          # Creative Engineer checklist
+    └── supportive.md        # Supportive Mentor framework
 ```
 
 ## ⚙️ Configuration

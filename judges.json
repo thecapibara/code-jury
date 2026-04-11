@@ -2,6 +2,7 @@
   {
     "name": "Strict Critic",
     "type": "strict",
+    "review_guide": "strict.md",
     "title_male": "The Strict Critic",
     "title_female": "The Strict Critic",
     "emoji_male": "👨‍⚖️",
@@ -14,6 +15,7 @@
   {
     "name": "Supportive Mentor",
     "type": "supportive",
+    "review_guide": "supportive.md",
     "title_male": "The Supportive Mentor",
     "title_female": "The Supportive Mentor",
     "emoji_male": "👨‍🏫",
@@ -26,6 +28,7 @@
   {
     "name": "Detail-Oriented Reviewer",
     "type": "detail_oriented",
+    "review_guide": "detail.md",
     "title_male": "The Detail-Oriented Reviewer",
     "title_female": "The Detail-Oriented Reviewer",
     "emoji_male": "🔍",
@@ -38,6 +41,7 @@
   {
     "name": "Creative Engineer",
     "type": "creative",
+    "review_guide": "creative.md",
     "title_male": "The Creative Engineer",
     "title_female": "The Creative Engineer",
     "emoji_male": "🎨",
@@ -50,6 +54,7 @@
   {
     "name": "Security Expert",
     "type": "security_focused",
+    "review_guide": "security.md",
     "title_male": "Security Expert",
     "title_female": "Security Expert",
     "emoji_male": "🛡️",
@@ -62,6 +67,7 @@
   {
     "name": "Performance Optimizer",
     "type": "performance_focused",
+    "review_guide": "performance.md",
     "title_male": "Performance Optimizer",
     "title_female": "Performance Optimizer",
     "emoji_male": "⚡",
@@ -74,6 +80,7 @@
   {
     "name": "Testing Expert",
     "type": "testing_expert",
+    "review_guide": "testing.md",
     "title_male": "Testing Expert",
     "title_female": "Testing Expert",
     "emoji_male": "🧪",
@@ -86,6 +93,7 @@
   {
     "name": "Architecture Guru",
     "type": "architecture_guru",
+    "review_guide": "architecture.md",
     "title_male": "Architecture Guru",
     "title_female": "Architecture Guru",
     "emoji_male": "🏛️",
@@ -98,6 +106,7 @@
   {
     "name": "UX Advocate",
     "type": "user_experience",
+    "review_guide": "ux.md",
     "title_male": "User Advocate",
     "title_female": "User Advocate",
     "emoji_male": "👤",
@@ -110,6 +119,7 @@
   {
     "name": "Maintenance Focus",
     "type": "maintenance_focused",
+    "review_guide": "maintenance.md",
     "title_male": "Maintenance Advocate",
     "title_female": "Maintenance Advocate",
     "emoji_male": "🔧",
