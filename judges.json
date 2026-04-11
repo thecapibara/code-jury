@@ -5,12 +5,13 @@
     "review_guide": "strict.md",
     "title_male": "The Strict Critic",
     "title_female": "The Strict Critic",
-    "emoji_male": "👨‍⚖️",
+    "emoji_male": "👨‍️",
     "emoji_female": "👩‍⚖️",
     "description": "High standards, catches every mistake",
     "focus": ["Architecture", "Error Handling", "Security", "Code Quality"],
     "vote_weight": 1.7,
-    "model": "sonnet"
+    "model": "sonnet",
+    "gemini_model": "pro"
   },
   {
     "name": "Supportive Mentor",
@@ -23,7 +24,8 @@
     "description": "Finds the positive, but honestly points out issues",
     "focus": ["Growth Potential", "Good Practices", "Learning"],
     "vote_weight": 1.0,
-    "model": "haiku"
+    "model": "haiku",
+    "gemini_model": "flash"
   },
   {
     "name": "Detail-Oriented Reviewer",
@@ -36,7 +38,8 @@
     "description": "Notices every detail, perfectionist",
     "focus": ["Code Style", "Documentation", "Tests", "DRY", "Naming"],
     "vote_weight": 1.2,
-    "model": "haiku"
+    "model": "haiku",
+    "gemini_model": "flash"
   },
   {
     "name": "Creative Engineer",
@@ -49,7 +52,8 @@
     "description": "Values elegant and innovative solutions",
     "focus": ["Creativity", "Performance", "Elegance"],
     "vote_weight": 1.0,
-    "model": "haiku"
+    "model": "haiku",
+    "gemini_model": "flash"
   },
   {
     "name": "Security Expert",
@@ -62,7 +66,8 @@
     "description": "Focused on vulnerabilities and code security",
     "focus": ["Vulnerabilities", "Input Validation", "Authentication", "Encryption"],
     "vote_weight": 2.0,
-    "model": "sonnet"
+    "model": "sonnet",
+    "gemini_model": "pro"
   },
   {
     "name": "Performance Optimizer",
@@ -75,7 +80,8 @@
     "description": "Finds bottlenecks and inefficient code",
     "focus": ["Algorithms", "Memory", "CPU", "Scalability"],
     "vote_weight": 1.5,
-    "model": "sonnet"
+    "model": "sonnet",
+    "gemini_model": "pro"
   },
   {
     "name": "Testing Expert",
@@ -88,7 +94,8 @@
     "description": "Checks test quality and coverage",
     "focus": ["Unit Tests", "Integration Tests", "Edge Cases", "Mocking"],
     "vote_weight": 1.6,
-    "model": "sonnet"
+    "model": "sonnet",
+    "gemini_model": "pro"
   },
   {
     "name": "Architecture Guru",
@@ -101,7 +108,8 @@
     "description": "Evaluates system architecture and design",
     "focus": ["SOLID", "Design Patterns", "Modularity", "Coupling"],
     "vote_weight": 1.8,
-    "model": "sonnet"
+    "model": "sonnet",
+    "gemini_model": "pro"
   },
   {
     "name": "UX Advocate",
@@ -114,7 +122,8 @@
     "description": "Looks at code from end-user perspective",
     "focus": ["API Design", "Error Messages", "API Docs", "UX"],
     "vote_weight": 1.1,
-    "model": "haiku"
+    "model": "haiku",
+    "gemini_model": "flash"
   },
   {
     "name": "Maintenance Focus",
@@ -127,6 +136,7 @@
     "description": "Values code that is easy to maintain and extend",
     "focus": ["Readability", "Refactoring", "Tech Debt", "Legacy"],
     "vote_weight": 1.2,
-    "model": "haiku"
+    "model": "haiku",
+    "gemini_model": "flash"
   }
 ]

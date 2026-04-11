@@ -2,7 +2,7 @@
 
 **4 independent AI judges evaluate your code — like America's Got Talent!**
 
-Works with Qwen Code, Claude Code, and any other AI coding assistant that supports custom commands/skills.
+Works with Qwen Code, Claude Code, Gemini CLI, and any other AI coding assistant that supports custom commands/skills.
 
 ## ✨ Features
 
@@ -101,32 +101,73 @@ Or directly run the selector script:
 python3 .claude/skills/vote/scripts/select_judges.py --help
 ```
 
+### Gemini CLI
+
+Use the skill command:
+
+```
+/skills code-jury            # Evaluate unstaged changes (balanced: 2× Pro + 2× Flash)
+```
+
+**Quality modes:**
+
+```
+# Lightning — 4× Flash-Lite (fastest & cheapest)
+/skills code-jury            # Ask for lightning mode
+
+# Flash — 4× Flash (fast but capable)
+/skills code-jury            # Ask for flash mode
+
+# Balanced — 2× Pro + 2× Flash (default)
+/skills code-jury            # Default mode
+
+# Thorough — 4× Pro (maximum quality)
+/skills code-jury            # Ask for thorough mode
+```
+
+Or directly run the selector script:
+```bash
+python3 .gemini/skills/code-jury/scripts/select_judges.py --platform gemini --help
+```
+
 ## 👥 The Judges
 
 Each vote uses **4 judges** randomly selected from **10 personality types**:
 
-| Personality | Emoji | Weight | Default Model | Expertise |
-|-------------|-------|--------|---------------|-----------|
-| Strict Critic | 👩‍⚖️ | **1.7x** | Sonnet | Architecture, errors, security |
-| Supportive Mentor | 👨‍🏫 | 1.0x | Haiku | Potential, best practices, learning |
-| Detail-Oriented Reviewer | 🔍 | 1.2x | Haiku | Style, docs, tests, DRY |
-| Creative Engineer | 🎨 | 1.0x | Haiku | Creativity, performance, elegance |
-| **Security Expert** | 🛡️ | **2.0x** | Sonnet | Vulnerabilities, validation, encryption |
-| **Performance Optimizer** | ⚡ | **1.5x** | Sonnet | Algorithms, memory, CPU, scalability |
-| **Testing Expert** | 🧪 | **1.6x** | Sonnet | Unit tests, integration, edge cases |
-| **Architecture Guru** | 🏛️ | **1.8x** | Sonnet | SOLID, patterns, modularity |
-| **User Advocate** | 👤 | **1.1x** | Haiku | API design, UX, error messages |
+| Personality | Emoji | Weight | Claude/Qwen | Gemini | Expertise |
+|-------------|-------|--------|-------------|--------|-----------|
+| Strict Critic | 👩u200d⚖️ | **1.7x** | Sonnet | 3.1 Pro | Architecture, errors, security |
+| Supportive Mentor | 👨u200d🏫 | 1.0x | Haiku | 3.1 Flash | Potential, best practices |
+| Detail-Oriented Reviewer | 🔍 | 1.2x | Haiku | 3.1 Flash | Style, docs, tests, DRY |
+| Creative Engineer | 🎨 | 1.0x | Haiku | 3.1 Flash | Creativity, elegance |
+| **Security Expert** | 🛡️ | **2.0x** | Sonnet | 3.1 Pro | Vulnerabilities, validation |
+| **Performance Optimizer** | ⚡ | **1.5x** | Sonnet | 3.1 Pro | Algorithms, memory, CPU |
+| **Testing Expert** | 🧪 | **1.6x** | Sonnet | 3.1 Pro | Unit tests, edge cases |
+| **Architecture Guru** | 🏛️ | **1.8x** | Sonnet | 3.1 Pro | SOLID, patterns, modularity |
+| **User Advocate** | 👤 | **1.1x** | Haiku | 3.1 Flash | API design, UX |
+| **Maintenance Focused** | 🔧 | **1.2x** | Haiku | 3.1 Flash | Readability, tech debt |
 | **Maintenance Focused** | 🔧 | **1.2x** | Haiku | Readability, tech debt, legacy |
 
 ### Quality Modes
 
-Each vote uses **4 judges**. Choose the review depth:
+Each vote uses **4 judges**. Choose the review depth. Modes vary by platform:
 
-| Mode | Use case |
-|------|----------|
-| ⚡ **Lightning** | Quick checks, small changes (4× Haiku) |
-| ⚖️ **Balanced** | Default, optimal balance (2× Sonnet + 2× Haiku) |
-| 🔍 **Thorough** | Important reviews, security (4× Sonnet) |
+#### Claude / Qwen Code
+
+| Mode | Models | Use case |
+|------|--------|----------|
+| ⚡ **Lightning** | 4× Haiku | Quick checks, smallest diff |
+| ⚖️ **Balanced** | 2× Sonnet + 2× Haiku | Default — optimal balance |
+| 🔍 **Thorough** | 4× Sonnet | Important reviews, security |
+
+#### Gemini CLI
+
+| Mode | Models | Use case |
+|------|--------|----------|
+| ⚡ **Lightning** | 4× Flash-Lite | Fastest & cheapest |
+| 💨 **Flash** | 4× Flash | Fast but capable |
+| ⚖️ **Balanced** | 2× Pro + 2× Flash | Default — optimal balance |
+| 🔍 **Thorough** | 4× Pro | Maximum quality |
 
 Usage: `/vote --mode thorough` or `/vote --mode lightning`
 
@@ -225,7 +266,8 @@ Judges names and personalities adapt to your language:
 ├── SKILL.md                 # Skill description
 ├── scripts/
 │   ├── select_judges.py     # Main entry point — judge selection
-│   └── judge_profiles/      # 9 languages (names & personalities)
+│   ├── judge_profiles/      # 9 languages (names & personalities)
+│   └── judge_review_guides/ # Detailed checklists for each judge type
 ├── sessions/                # Vote cache (gitignored)
 └── branches/                # Branch history (gitignored)
 
@@ -238,31 +280,26 @@ Judges names and personalities adapt to your language:
 └── skills/vote/             # Claude Code skill
     └── scripts/             # Same scripts as Qwen Code
 
-judges.json                  # Source of truth for judge weights, models, review guides
-install.sh                   # Installer (--remote for download from GitHub)
-select_judges.py             # CLI: judge selection & localization
+.gemini/skills/code-jury/    # Gemini CLI skill
+├── SKILL.md                 # Skill description
+└── scripts/                 # Same scripts as Qwen Code
+.gemini/agents/
+├── jury-judge-pro.md        # Expert sub-agent (Gemini 3.1 Pro)
+└── jury-judge-flash.md      # Lightweight sub-agent (Gemini 3.1 Flash/Lite)
 
-.claude/skills/vote/scripts/
-└── judge_review_guides/     # Detailed prompts for each judge type
-    ├── strict.md            # Strict Critic checklist
-    ├── security.md          # Security Expert checklist
-    ├── performance.md       # Performance Optimizer checklist
-    ├── testing.md           # Testing Expert checklist
-    ├── architecture.md      # Architecture Guru checklist
-    ├── ux.md                # UX Advocate checklist
-    ├── maintenance.md       # Maintenance Focus checklist
-    ├── detail.md            # Detail-Oriented Reviewer checklist
-    ├── creative.md          # Creative Engineer checklist
-    └── supportive.md        # Supportive Mentor framework
+judges.json                  # Source of truth for judge weights, models, review guides
+install.sh                   # Installer (--qwen, --claude, --gemini, --remote)
+select_judges.py             # CLI: judge selection & localization
 ```
 
 ## ⚙️ Configuration
 
 Key configuration files:
 
-- `judges.json` — judge weights, models, and focus areas
-- `select_judges.py` — `MODES` dict for quality mode behavior
-- Language profiles in `.claude/skills/vote/scripts/judge_profiles/` — localized names & personalities
+- `judges.json` — judge weights, models (sonnet/haiku + pro/flash/flash-lite), and focus areas
+- `select_judges.py` — `MODES_*` dicts for quality mode behavior per platform
+- `scripts/judge_review_guides/` — detailed checklists for each judge type (10 files)
+- Language profiles in `scripts/judge_profiles/` — localized names & personalities (9 languages)
 
 ## 🔒 Privacy & Security
 

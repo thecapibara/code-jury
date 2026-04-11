@@ -5,3 +5,7 @@
 # Claude Code - sessions and cache (sensitive info)
 .claude/skills/vote/sessions/
 .claude/skills/vote/branches/
+
+# Gemini CLI - sessions and cache (sensitive info)
+.gemini/skills/code-jury/sessions/
+.gemini/skills/code-jury/branches/
