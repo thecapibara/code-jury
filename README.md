@@ -136,8 +136,8 @@ Each vote uses **4 judges** randomly selected from **10 personality types**:
 
 | Personality | Emoji | Weight | Claude/Qwen | Gemini | Expertise |
 |-------------|-------|--------|-------------|--------|-----------|
-| Strict Critic | 👩u200d⚖️ | **1.7x** | Sonnet | 3.1 Pro | Architecture, errors, security |
-| Supportive Mentor | 👨u200d🏫 | 1.0x | Haiku | 3.1 Flash | Potential, best practices |
+| Strict Critic | ⚖️ | **1.7x** | Sonnet | 3.1 Pro | Architecture, errors, security |
+| Supportive Mentor | 🏫 | 1.0x | Haiku | 3.1 Flash | Potential, best practices |
 | Detail-Oriented Reviewer | 🔍 | 1.2x | Haiku | 3.1 Flash | Style, docs, tests, DRY |
 | Creative Engineer | 🎨 | 1.0x | Haiku | 3.1 Flash | Creativity, elegance |
 | **Security Expert** | 🛡️ | **2.0x** | Sonnet | 3.1 Pro | Vulnerabilities, validation |
