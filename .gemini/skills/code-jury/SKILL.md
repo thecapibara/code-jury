@@ -83,10 +83,10 @@ Parse each judge's "❌ What I disliked" section. Extract the core issue.
 
 **Step 4c — Calculate weighted score:**
 - Weighted average: `sum(score_i × vote_weight_i) / sum(vote_weight_i)`
-- Consensus penalty: For each issue mentioned by 3+ judges, subtract 0.3 (max -1.0)
+- Consensus penalty: For each **major** issue mentioned by 3+ judges, you MAY subtract 0.1 to 0.3 from the total score (max -1.0). Minor/style issues should not trigger this penalty.
 - Round to 1 decimal place
 
-**Pass threshold:** weighted "Yes" votes >= 60% of total weight
+**Pass threshold:** weighted "Yes" votes >= 50% of total weight (was 60%). Good code should pass!
 
 ## Output Format
 
